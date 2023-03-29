@@ -1,2 +1,2 @@
-# 2023_CapstoneDesign_Blooming
+Capstone_Blooming
 Flowering Rate Guidance System with  vision detection model
