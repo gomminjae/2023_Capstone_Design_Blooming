@@ -21,6 +21,7 @@ class LoginViewController: BaseViewController {
     override func setupView() {
         
         view.addSubview(topBaseView)
+        topBaseView.addSubview(titleLabel)
         
         view.addSubview(kakaoLoginButton)
         view.addSubview(appleLoginButton)
@@ -36,6 +37,13 @@ class LoginViewController: BaseViewController {
             $0.trailing.equalTo(view)
             $0.height.equalTo(200)
         }
+        titleLabel.snp.makeConstraints {
+            $0.top.equalTo(topBaseView.snp.centerY)
+            $0.leading.equalTo(topBaseView.snp.leading)
+            $0.trailing.equalTo(topBaseView.snp.trailing)
+            
+        }
+        
         
         
     }
@@ -49,6 +57,7 @@ class LoginViewController: BaseViewController {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "로그인"
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
     

@@ -10,6 +10,8 @@
 		264FB1DBBD3701278ED7DF70 /* Pods_ParkingInfo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B595645E673E94072F3CE4D /* Pods_ParkingInfo.framework */; };
 		B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B527B38B29D992A7007B3355 /* BaseViewController.swift */; };
 		B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B527B38E29D996AC007B3355 /* LoginViewController.swift */; };
+		B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B527B39029DA4E10007B3355 /* LoginViewModel.swift */; };
+		B527B39329DA4E7F007B3355 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B527B39229DA4E7F007B3355 /* HomeViewModel.swift */; };
 		B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */; };
 		B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */; };
 		B5FD472329D6AC6F007DA4C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FD472129D6AC6F007DA4C8 /* Main.storyboard */; };
@@ -25,6 +27,8 @@
 		9F73404F98F37D99BC432C1D /* Pods-ParkingInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo.debug.xcconfig"; path = "Target Support Files/Pods-ParkingInfo/Pods-ParkingInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		B527B38B29D992A7007B3355 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B527B38E29D996AC007B3355 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B527B39029DA4E10007B3355 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		B527B39229DA4E7F007B3355 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				B527B38E29D996AC007B3355 /* LoginViewController.swift */,
+				B527B39029DA4E10007B3355 /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -89,7 +94,6 @@
 				B5FD474429D6AD0F007DA4C8 /* Manager */,
 				B5FD474329D6ACFD007DA4C8 /* ViewControllers */,
 				B5FD474229D6ACF2007DA4C8 /* View */,
-				B5FD474129D6ACD4007DA4C8 /* ViewModel */,
 				B5FD474029D6ACCC007DA4C8 /* Model */,
 				B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */,
 				B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */,
@@ -107,13 +111,6 @@
 			children = (
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B5FD474129D6ACD4007DA4C8 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B5FD474229D6ACF2007DA4C8 /* View */ = {
@@ -144,6 +141,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */,
+				B527B39229DA4E7F007B3355 /* HomeViewModel.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -274,9 +272,11 @@
 				B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
 				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
+				B527B39329DA4E7F007B3355 /* HomeViewModel.swift in Sources */,
 				B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */,
 				B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */,
 				B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */,
+				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

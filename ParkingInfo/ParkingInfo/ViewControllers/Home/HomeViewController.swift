@@ -8,6 +8,7 @@
 import UIKit
 import RxSwift
 import SnapKit
+import RxCocoa
 
 class HomeViewController: BaseViewController {
     
@@ -39,10 +40,6 @@ class HomeViewController: BaseViewController {
         view.backgroundColor =  .systemMint
         return view
     }()
-    
-    
-    
-    
     
 
 }
