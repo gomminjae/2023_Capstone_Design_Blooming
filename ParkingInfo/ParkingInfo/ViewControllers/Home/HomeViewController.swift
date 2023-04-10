@@ -30,9 +30,8 @@ class HomeViewController: BaseViewController {
             $0.trailing.equalTo(view)
             $0.bottom.equalTo(view)
         }
+        
     }
-    
-    
     //MARK
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
