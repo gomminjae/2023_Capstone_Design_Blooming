@@ -10,9 +10,11 @@ import RxSwift
 import SnapKit
 import RxCocoa
 
+
 class HomeViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
+    private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +32,13 @@ class HomeViewController: BaseViewController {
             $0.trailing.equalTo(view)
             $0.bottom.equalTo(view)
         }
-        
     }
+    
+    override func bindRx() {
+        viewModel.dummyData.bind(to: collectionView.rx.items(cellIdentifier: ))
+    
+    }
+    
     //MARK
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -39,6 +46,5 @@ class HomeViewController: BaseViewController {
         view.backgroundColor =  .systemMint
         return view
     }()
-    
 
 }
