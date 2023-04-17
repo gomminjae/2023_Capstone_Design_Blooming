@@ -8,6 +8,8 @@
 import UIKit
 import RxSwift
 import SnapKit
+import KakaoSDKAuth
+
 
 class LoginViewController: BaseViewController {
     
@@ -56,7 +58,7 @@ class LoginViewController: BaseViewController {
     //MARK: UI
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "로그인"
+        label.text = "로그인을 하세요"
         label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return label
     }()
@@ -75,6 +77,7 @@ class LoginViewController: BaseViewController {
     let kakaoLoginButton: UIButton = {
         let button = UIButton()
         button.setTitle("Kakao Login", for: .normal)
+        button.backgroundColor = .systemYellow
         return button
     }()
     
