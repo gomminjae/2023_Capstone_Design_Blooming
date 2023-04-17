@@ -9,7 +9,7 @@ import Foundation
 
 extension String {
     
-    static func reusableIdentifier: String {
+    static var reusableIdentifier(): String {
         return String(describing: self)
     }
 }

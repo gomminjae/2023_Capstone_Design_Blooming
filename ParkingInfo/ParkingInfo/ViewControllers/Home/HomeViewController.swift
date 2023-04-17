@@ -35,8 +35,6 @@ class HomeViewController: BaseViewController {
     }
     
     override func bindRx() {
-        viewModel.dummyData.bind(to: collectionView.rx.items(cellIdentifier: ))
-    
     }
     
     //MARK
@@ -46,5 +44,6 @@ class HomeViewController: BaseViewController {
         view.backgroundColor =  .systemMint
         return view
     }()
+    
 
 }

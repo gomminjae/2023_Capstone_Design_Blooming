@@ -13,6 +13,7 @@ class HomeCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupView()
     }
     
     required init?(coder: NSCoder) {
@@ -23,6 +24,18 @@ class HomeCell: UICollectionViewCell {
         addSubview(titleLabel)
         addSubview(stateLabel)
         
+        
+        titleLabel.snp.makeConstraints {
+            $0.leading.equalTo(self).inset(20)
+            $0.trailing.equalTo(self.frame.width / 2)
+        }
+        
+        
+        
+        
+        
+        
+            
     }
     
     //MARK: UI
@@ -36,9 +49,16 @@ class HomeCell: UICollectionViewCell {
         return label
     }()
     
-    let stattedView: UIImageView = {
-        let view = UIImageView()
+    let stattedView: UIButton = {
+        let view = UIButton()
         return view
     }()
+    
+    let timeStampLabel: UILabel = {
+        let label = UILabel()
+        label.text = "2023-04-17 9:00"
+        return label
+    }()
+    
     
 }
