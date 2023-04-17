@@ -1,0 +1,15 @@
+server:
+  port: 3000
+
+
+kakao:
+  authUrl: https://kauth.kakao.com/oauth/token
+  userApiUrl: https://kapi.kakao.com/v2/user/me
+  restapiKey: 1fa8ddfa3f479c16a3a0e513b5078e59
+  redirectUrl: http://localhost:3000/callback
+
+logging:
+  level:
+    com.blooming.modelServer: debug
+
+#https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1fa8ddfa3f479c16a3a0e513b5078e59&redirect_uri=http://localhost:3000/callback
