@@ -14,6 +14,7 @@ class BaseViewController: UIViewController {
         setupView()
         setupLayout()
         bindRx()
+        //view.backgroundColor = .baseColor
         
         //view.backgroundColor = .systemBlue
 

@@ -13,16 +13,20 @@ import RxCocoa
 
 class HomeViewController: BaseViewController {
     
+    
     private let disposeBag = DisposeBag()
     private let viewModel = HomeViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "State"
+        title = "주차장 현황"
         // Do any additional setup after loading the view.
     }
     override func setupView() {
         view.addSubview(collectionView)
+        view.backgroundColor = .baseColor
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.backgroundColor = .baseColor
+        self.navigationController?.navigationBar.scrollEdgeAppearance?.titleTextAttributes = [.foregroundColor: UIColor.textColor]
     }
     
     override func setupLayout() {
@@ -35,15 +39,30 @@ class HomeViewController: BaseViewController {
     }
     
     override func bindRx() {
+        viewModel.dummyData.bind(to: collectionView.rx.items(cellIdentifier: HomeCell.reusableIdentifier, cellType: HomeCell.self)) { index,model,cell in
+            cell.titleLabel.text = model.parkinlotsTitle
+            
+        }.disposed(by: disposeBag)
     }
     
     //MARK
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        view.backgroundColor =  .systemMint
-        return view
+        layout.itemSize = CGSize(width: 340, height: 150)
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 20, bottom: 20, right: 20)
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor =  .baseColor
+        collectionView.register(HomeCell.self, forCellWithReuseIdentifier: HomeCell.reusableIdentifier)
+        
+        return collectionView
     }()
     
+    
 
+}
+
+extension HomeViewController {
+    private func generateLayout() -> UICollectionViewLayout {
+        return UICollectionViewLayout()
+    }
 }
