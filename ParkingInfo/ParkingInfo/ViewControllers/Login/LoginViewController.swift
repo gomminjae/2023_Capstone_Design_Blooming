@@ -9,15 +9,57 @@ import UIKit
 import RxSwift
 import SnapKit
 import KakaoSDKAuth
+import KakaoSDKUser
 
 
 class LoginViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
+    private let viewModel = LoginViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        kakaoLoginButton.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+    }
+    
+    
+    @objc
+    func tappedLogin() {
+        if (UserApi.isKakaoTalkLoginAvailable()) {
 
+            //카톡 설치되어있으면 -> 카톡으로 로그인
+            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("카카오 톡으로 로그인 성공")
+
+                    if oauthToken?.accessToken != nil {
+                        let vc = UINavigationController(rootViewController: HomeViewController())
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                    }
+                }
+            }
+        } else {
+
+            // 카톡 없으면 -> 계정으로 로그인
+            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("카카오 계정으로 로그인 성공")
+
+                    //let token = oauthToken
+                    if oauthToken?.accessToken != nil {
+                        let vc = UINavigationController(rootViewController: HomeViewController())
+                        vc.modalPresentationStyle = .fullScreen
+                        self.present(vc, animated: true)
+                    }
+
+                }
+            }
+        }
     }
     
     override func setupView() {
@@ -46,10 +88,18 @@ class LoginViewController: BaseViewController {
             
         }
         
+        kakaoLoginButton.snp.makeConstraints {
+            $0.top.equalTo(topBaseView.snp.bottom).offset(40)
+            $0.leading.equalTo(view).inset(40)
+            $0.trailing.equalTo(view).inset(40)
+            
+        }
+        
         
         
     }
     override func bindRx() {
+        
         
         
     }
@@ -76,8 +126,7 @@ class LoginViewController: BaseViewController {
     
     let kakaoLoginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Kakao Login", for: .normal)
-        button.backgroundColor = .systemYellow
+        button.setImage(UIImage(named: "kakao_login_medium_wide"), for: .normal)
         return button
     }()
     

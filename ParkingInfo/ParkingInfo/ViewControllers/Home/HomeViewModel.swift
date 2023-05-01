@@ -9,6 +9,11 @@ import Foundation
 import RxSwift
 import RxCocoa
 
+
+protocol HomeViewModelBindable {
+    
+}
+
 class HomeViewModel {
     
     var dummyData: Observable<[Info]> = Observable.of([
