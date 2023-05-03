@@ -21,6 +21,11 @@
 		B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB73E29FBFC85004AB3CF /* LoginManager.swift */; };
 		B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */; };
 		B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */; };
+		B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7712A000549004AB3CF /* TabbarViewController.swift */; };
+		B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7732A0152B4004AB3CF /* CurvedView.swift */; };
+		B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */; };
+		B56AB7782A023A05004AB3CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7772A023A05004AB3CF /* APIService.swift */; };
+		B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */; };
 		B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */; };
 		B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */; };
 		B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */; };
@@ -48,6 +53,11 @@
 		B56AB73E29FBFC85004AB3CF /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
+		B56AB7712A000549004AB3CF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
+		B56AB7732A0152B4004AB3CF /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
+		B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B56AB7772A023A05004AB3CF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeResponse.swift; sourceTree = "<group>"; };
 		B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +96,7 @@
 			children = (
 				B527B38E29D996AC007B3355 /* LoginViewController.swift */,
 				B527B39029DA4E10007B3355 /* LoginViewModel.swift */,
+				B56AB7732A0152B4004AB3CF /* CurvedView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -95,6 +106,7 @@
 			children = (
 				B5304C5B29E7DF01007C1060 /* ReusableIdenrifier.swift */,
 				B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */,
+				B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -123,6 +135,15 @@
 				B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */,
 			);
 			path = Board;
+			sourceTree = "<group>";
+		};
+		B56AB7792A023A4A004AB3CF /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B56AB7772A023A05004AB3CF /* APIService.swift */,
+				B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		B5FD470F29D6AC6F007DA4C8 = {
@@ -193,6 +214,7 @@
 		B5FD474429D6AD0F007DA4C8 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				B56AB7792A023A4A004AB3CF /* Network */,
 				B56AB73E29FBFC85004AB3CF /* LoginManager.swift */,
 			);
 			path = Manager;
@@ -204,6 +226,7 @@
 				B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */,
 				B527B39229DA4E7F007B3355 /* HomeViewModel.swift */,
 				B5304C5E29E7DF45007C1060 /* HomeCell.swift */,
+				B56AB7712A000549004AB3CF /* TabbarViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -332,23 +355,28 @@
 			buildActionMask = 2147483647;
 			files = (
 				B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */,
+				B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */,
 				B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */,
 				B5304C6729E9A289007C1060 /* MainCoordinator.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
+				B56AB7782A023A05004AB3CF /* APIService.swift in Sources */,
 				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
 				B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */,
 				B5304C5F29E7DF45007C1060 /* HomeCell.swift in Sources */,
 				B5304C5929E7D385007C1060 /* Info.swift in Sources */,
 				B527B39329DA4E7F007B3355 /* HomeViewModel.swift in Sources */,
+				B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */,
 				B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */,
 				B5304C6229E80A72007C1060 /* HeaderView.swift in Sources */,
 				B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */,
 				B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */,
 				B5304C5C29E7DF01007C1060 /* ReusableIdenrifier.swift in Sources */,
+				B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */,
 				B5304C6529E98D05007C1060 /* Coordinator.swift in Sources */,
 				B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */,
 				B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */,
 				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
+				B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

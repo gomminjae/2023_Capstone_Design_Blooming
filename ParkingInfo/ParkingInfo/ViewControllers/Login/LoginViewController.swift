@@ -22,6 +22,14 @@ class LoginViewController: BaseViewController {
         kakaoLoginButton.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
     }
     
+    private func setupInitialVC() {
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyBoard.instantiateViewController(identifier: "tabbar")
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .coverVertical
+        self.present(vc, animated: true)
+    }
+    
     
     @objc
     func tappedLogin() {
@@ -35,9 +43,7 @@ class LoginViewController: BaseViewController {
                     print("카카오 톡으로 로그인 성공")
 
                     if oauthToken?.accessToken != nil {
-                        let vc = UINavigationController(rootViewController: HomeViewController())
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true)
+                        self.setupInitialVC()
                     }
                 }
             }
@@ -52,9 +58,7 @@ class LoginViewController: BaseViewController {
 
                     //let token = oauthToken
                     if oauthToken?.accessToken != nil {
-                        let vc = UINavigationController(rootViewController: HomeViewController())
-                        vc.modalPresentationStyle = .fullScreen
-                        self.present(vc, animated: true)
+                        self.setupInitialVC()
                     }
 
                 }
@@ -66,6 +70,7 @@ class LoginViewController: BaseViewController {
         
         view.addSubview(topBaseView)
         topBaseView.addSubview(titleLabel)
+        topBaseView.addSubview(subTitleLabel)
         
         view.addSubview(kakaoLoginButton)
         view.addSubview(appleLoginButton)
@@ -79,13 +84,16 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(view.safeAreaLayoutGuide)
             $0.leading.equalTo(view)
             $0.trailing.equalTo(view)
-            $0.height.equalTo(200)
+            $0.height.equalTo(view.frame.height / 2)
         }
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(topBaseView.snp.centerY)
-            $0.leading.equalTo(topBaseView.snp.leading)
-            $0.trailing.equalTo(topBaseView.snp.trailing)
-            
+            $0.centerX.equalTo(topBaseView)
+            $0.top.equalTo(topBaseView).inset(40)
+        }
+        
+        subTitleLabel.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
+            $0.centerX.equalTo(titleLabel)
         }
         
         kakaoLoginButton.snp.makeConstraints {
@@ -104,23 +112,26 @@ class LoginViewController: BaseViewController {
         
     }
     
-    
     //MARK: UI
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "로그인을 하세요"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        label.text = "당신의 주차를 편하게!"
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
         return label
     }()
     
     let subTitleLabel: UILabel = {
         let label = UILabel()
+        label.text = "Login"
+        label.textColor = .white
+        label.font = UIFont.systemFont(ofSize: 30, weight: .semibold)
         return label
     }()
     
-    let topBaseView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .systemMint
+    let topBaseView: CurvedView = {
+        let view = CurvedView()
+        //view.backgroundColor = .blue
         return view
     }()
     

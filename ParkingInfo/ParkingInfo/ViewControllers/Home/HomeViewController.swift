@@ -39,8 +39,9 @@ class HomeViewController: BaseViewController {
     }
     
     override func bindRx() {
-        viewModel.dummyData.bind(to: collectionView.rx.items(cellIdentifier: HomeCell.reusableIdentifier, cellType: HomeCell.self)) { index,model,cell in
-            cell.titleLabel.text = model.parkinlotsTitle
+        viewModel.infos.bind(to: collectionView.rx.items(cellIdentifier: HomeCell.reusableIdentifier, cellType: HomeCell.self)) { index,model,cell in
+            cell.titleLabel.text =  model.parkinglotsTitle
+            cell.timeStampLabel.text = model.timeStamp
             
         }.disposed(by: disposeBag)
     }

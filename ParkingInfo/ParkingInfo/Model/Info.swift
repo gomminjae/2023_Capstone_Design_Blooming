@@ -10,13 +10,18 @@ import Foundation
 
 struct Info: Codable, Equatable {
     
-    var parkinlotsTitle: String
+    var parkinglotsTitle: String
     var parkingState: String
-    var isStarred: Bool
+    var isStarred: Bool?
+    var timeStamp: String
     
-    init(parkinlotsTitle: String, parkingState: String, isStarred: Bool = false) {
-        self.parkinlotsTitle = parkinlotsTitle
-        self.parkingState = parkingState
-        self.isStarred = isStarred
+    
+    private enum CodingKeys: String, CodingKey {
+        case parkinglotsTitle = "parkingLotName"
+        case parkingState = "status"
+        case isStarred = "favorite"
+        case timeStamp
     }
+    
+    
 }

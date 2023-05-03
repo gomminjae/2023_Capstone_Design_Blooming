@@ -74,7 +74,7 @@ class HomeCell: UICollectionViewCell {
     
     let timeStampLabel: UILabel = {
         let label = UILabel()
-        label.text = "2023-04-17 9:00"
+        //label.text = "2023-04-17 9:00"
         label.textColor = .lightGray
         return label
     }()

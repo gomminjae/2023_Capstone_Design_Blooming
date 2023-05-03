@@ -13,11 +13,24 @@ import SnapKit
 class BoardViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func setupView() {
+        
+    }
+    
+    override func setupLayout() {
+    
+    }
+    
+    override func bindRx() {
+        
     }
     
     
@@ -27,6 +40,9 @@ class BoardViewController: BaseViewController {
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
     }()
+    
+    
+    
     
 
 }
