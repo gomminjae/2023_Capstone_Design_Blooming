@@ -2,13 +2,19 @@ package com.blooming.modelServer.login.service;
 
 
 import com.blooming.modelServer.login.client.KakaoClient;
+import com.blooming.modelServer.login.dto.KakaoInfo;
 import com.blooming.modelServer.login.dto.KakaoToken;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.net.URI;
+import java.util.HashMap;
+import java.util.Map;
 
 @Slf4j
 @Service
@@ -29,17 +35,17 @@ public class KakaoService {
     @Value("${kakao.redirect-url}")
     private String redirectUrl;
 
-//    public KakaoInfo getInfo(final String code) {
-//        final KakaoToken token = getToken(code);
-//        log.debug("token = {}", token);
-//        try {
-//            KakaoInfo result = client.getInfo(new URI(kakaoUserApiUrl), token.getTokenType() + " " + token.getAccessToken());
-//            return result;
-//        } catch (Exception e) {
-//            log.error("something error..", e);
-//            return KakaoInfo.fail();
-//        }
-//    }
+    public KakaoInfo getInfo(final String code) {
+        final KakaoToken token = getToken(code);
+        log.debug("token = {}", token);
+        try {
+            log.debug(client.getInfo(new URI(kakaoUserApiUrl), token.getTokenType() + " " + token.getAccessToken()).toString());
+            return client.getInfo(new URI(kakaoUserApiUrl), token.getTokenType() + " " + token.getAccessToken());
+        } catch (Exception e) {
+            log.error("something error..", e);
+            return KakaoInfo.fail();
+        }
+    }
 
     public KakaoToken getToken(final String code) {
         try {
