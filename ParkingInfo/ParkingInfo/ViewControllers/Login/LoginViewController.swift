@@ -10,6 +10,7 @@ import RxSwift
 import SnapKit
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
 
 class LoginViewController: BaseViewController {
@@ -19,7 +20,7 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        kakaoLoginButton.addTarget(self, action: #selector(tappedLogin), for: .touchUpInside)
+        kakaoLoginButton.addTarget(self, action: #selector(loginByKakao()), for: .touchUpInside)
     }
     
     private func setupInitialVC() {
@@ -32,7 +33,7 @@ class LoginViewController: BaseViewController {
     
     
     @objc
-    func tappedLogin() {
+    func loginByKakao() {
         if (UserApi.isKakaoTalkLoginAvailable()) {
 
             //카톡 설치되어있으면 -> 카톡으로 로그인
@@ -44,6 +45,14 @@ class LoginViewController: BaseViewController {
 
                     if oauthToken?.accessToken != nil {
                         self.setupInitialVC()
+                        do {
+                            let dic = try oauthToken?.encode()
+                            print("------->\(String(describing: dic))")
+                            InfoNetworkImpl.shared.postToken(token: dic!)
+                        } catch {
+                            print(error)
+                            print("post error")
+                        }
                     }
                 }
             }
@@ -65,6 +74,13 @@ class LoginViewController: BaseViewController {
             }
         }
     }
+    
+    @objc
+    func loginByApple() {
+        let request = ASAuthorizationAppleIDProvider().createRequest()
+        request.requestedScopes = [.fullName,.email]
+    }
+    
     
     override func setupView() {
         
@@ -153,9 +169,14 @@ class LoginViewController: BaseViewController {
         return button
     }()
     
-    
-    
+}
 
+extension LoginViewController: ASAuthorizationControllerDelegate {
+    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+        
+    }
+    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+            
+    }
     
-
 }

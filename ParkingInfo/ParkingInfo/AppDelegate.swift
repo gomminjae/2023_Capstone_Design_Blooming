@@ -8,15 +8,26 @@
 import UIKit
 import CoreData
 import KakaoSDKCommon
+import FirebaseMessaging
+import Firebase
+import FirebaseCore
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         KakaoSDK.initSDK(appKey: "80b450ba401310dabb48513dc9ef6a80")
+//        FirebaseApp.configure()
+//        Messaging.messaging().delegate = self
+//        UNUserNotificationCenter.current().delegate = self
+//
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//
+//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+//        application.registerForRemoteNotifications()
         return true
     }
 
@@ -80,4 +91,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-

@@ -17,6 +17,7 @@ class BoardViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "게시판"
 
         // Do any additional setup after loading the view.
     }
@@ -39,6 +40,11 @@ class BoardViewController: BaseViewController {
         let layout = UICollectionViewFlowLayout()
         let view = UICollectionView(frame: .zero, collectionViewLayout: layout)
         return view
+    }()
+    
+    let floatingButton: UIButton = {
+        let button = UIButton()
+        return button
     }()
     
     

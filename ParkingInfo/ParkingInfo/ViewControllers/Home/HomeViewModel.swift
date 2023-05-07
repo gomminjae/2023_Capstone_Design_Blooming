@@ -20,7 +20,7 @@ protocol HomeViewModelBindable {
 
 class HomeViewModel {
     
-    var infos: Observable<[Info]> = APIService.shared.fetchPosts()
+    var infos: Observable<[Info]> = InfoNetworkImpl.shared.fetchPosts()
     
     var dummy: Observable<[Info]> = Observable.of([
         Info(parkinglotsTitle: "조선대 IT 교수용 주차장", parkingState: "full", timeStamp: "2023-03-22 09:00"),

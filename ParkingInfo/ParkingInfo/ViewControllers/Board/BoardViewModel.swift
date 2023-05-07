@@ -14,6 +14,10 @@ protocol BoardViewModelBindable {
     associatedtype Input
     associatedtype Output
     
+    var disposeBag: DisposeBag { get set }
+    
+    func transform(input: Input) -> Output
+    
 }
 
 class BoardViewModel {
@@ -21,5 +25,6 @@ class BoardViewModel {
     private let disposeBag = DisposeBag()
     
     init() {}
+    
     
 }

@@ -22,7 +22,7 @@ class HomeCell: UICollectionViewCell {
     }
     
     private func setupView() {
-        self.layer.cornerRadius = 15
+        self.layer.cornerRadius = 18
         addSubview(titleLabel)
         
         addSubview(stateView)

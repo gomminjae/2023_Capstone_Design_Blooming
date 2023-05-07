@@ -11,24 +11,10 @@ import RxCocoa
 import Alamofire
 
 
-protocol APICompose {
-    var baseUrl: URL { get }
-    var subUrl: String { get }
-}
-
-class APIService: APICompose {
+class InfoNetworkImpl {
     
-    static let shared = APIService()
     
-    var baseUrl: URL {
-        guard let url = URL(string: "http://15.164.140.81:8080/")
-         else { fatalError() }
-        return url
-    }
-    
-    var subUrl: String {
-        return "dummy"
-    }
+    static let shared = InfoNetworkImpl()
     
     func fetchPosts() -> Observable<[Info]> {
         return Observable.create { observer -> Disposable in
@@ -60,7 +46,23 @@ class APIService: APICompose {
         }
         
     }
+}
+
+private extension InfoNetworkImpl {
     
+    struct InfoAPI {
+        static let scheme = "http"
+        static let host = "15.164.140.81:8080"
+    }
+    
+    func makeGetInfoComponents() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = InfoAPI.scheme
+        components.host = InfoAPI.host
+        components.path = "/dummy"
+        
+        return components
+    }
     
     
 }

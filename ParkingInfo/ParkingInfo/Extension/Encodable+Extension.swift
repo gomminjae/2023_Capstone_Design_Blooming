@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+
+extension Encodable {
+    func encode() throws -> [String:Any] {
+        let data = try JSONEncoder().encode(self)
+        guard let dic = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else { throw NSError() }
+        
+        return dic
+    }
+}
+
+[
+    Token: ""
+    
+]

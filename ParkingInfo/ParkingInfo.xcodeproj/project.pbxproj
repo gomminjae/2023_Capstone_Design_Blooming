@@ -24,8 +24,20 @@
 		B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7712A000549004AB3CF /* TabbarViewController.swift */; };
 		B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7732A0152B4004AB3CF /* CurvedView.swift */; };
 		B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */; };
-		B56AB7782A023A05004AB3CF /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7772A023A05004AB3CF /* APIService.swift */; };
+		B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */; };
 		B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */; };
+		B56AB7842A04FCD8004AB3CF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */; };
+		B56AB7862A04FCD8004AB3CF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */; };
+		B56AB7892A04FCD8004AB3CF /* InfoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */; };
+		B56AB78B2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */; };
+		B56AB78D2A04FCD8004AB3CF /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */; };
+		B56AB7902A04FCD9004AB3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */; };
+		B56AB7922A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */; };
+		B56AB7932A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */; };
+		B56AB7962A04FCD9004AB3CF /* InfoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */; };
+		B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79D2A0746C5004AB3CF /* Comment.swift */; };
+		B56AB7A02A07ACCC004AB3CF /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79F2A07ACCB004AB3CF /* AppleLoginManager.swift */; };
 		B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */; };
 		B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */; };
 		B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */; };
@@ -35,6 +47,30 @@
 		B5FD472B29D6AC70007DA4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FD472929D6AC70007DA4C8 /* LaunchScreen.storyboard */; };
 		B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B56AB7942A04FCD9004AB3CF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B5FD471029D6AC6F007DA4C8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B56AB7812A04FCD8004AB3CF;
+			remoteInfo = InfoWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B56AB7972A04FCD9004AB3CF /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B56AB7962A04FCD9004AB3CF /* InfoWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		568095187EB8B34530DC66F8 /* Pods-ParkingInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo.release.xcconfig"; path = "Target Support Files/Pods-ParkingInfo/Pods-ParkingInfo.release.xcconfig"; sourceTree = "<group>"; };
@@ -56,8 +92,20 @@
 		B56AB7712A000549004AB3CF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
 		B56AB7732A0152B4004AB3CF /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
 		B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		B56AB7772A023A05004AB3CF /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNetworkImpl.swift; sourceTree = "<group>"; };
 		B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeResponse.swift; sourceTree = "<group>"; };
+		B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidgetBundle.swift; sourceTree = "<group>"; };
+		B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidgetLiveActivity.swift; sourceTree = "<group>"; };
+		B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
+		B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = InfoWidget.intentdefinition; sourceTree = "<group>"; };
+		B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		B56AB7912A04FCD9004AB3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
+		B56AB79D2A0746C5004AB3CF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		B56AB79F2A07ACCB004AB3CF /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
 		B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -71,6 +119,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B56AB77F2A04FCD8004AB3CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56AB7862A04FCD8004AB3CF /* SwiftUI.framework in Frameworks */,
+				B56AB7842A04FCD8004AB3CF /* WidgetKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5FD471529D6AC6F007DA4C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -97,6 +154,7 @@
 				B527B38E29D996AC007B3355 /* LoginViewController.swift */,
 				B527B39029DA4E10007B3355 /* LoginViewModel.swift */,
 				B56AB7732A0152B4004AB3CF /* CurvedView.swift */,
+				B56AB79F2A07ACCB004AB3CF /* AppleLoginManager.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -107,6 +165,7 @@
 				B5304C5B29E7DF01007C1060 /* ReusableIdenrifier.swift */,
 				B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */,
 				B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */,
+				B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -140,16 +199,30 @@
 		B56AB7792A023A4A004AB3CF /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				B56AB7772A023A05004AB3CF /* APIService.swift */,
+				B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */,
 				B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		B56AB7872A04FCD8004AB3CF /* InfoWidget */ = {
+			isa = PBXGroup;
+			children = (
+				B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */,
+				B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */,
+				B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */,
+				B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */,
+				B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */,
+				B56AB7912A04FCD9004AB3CF /* Info.plist */,
+			);
+			path = InfoWidget;
 			sourceTree = "<group>";
 		};
 		B5FD470F29D6AC6F007DA4C8 = {
 			isa = PBXGroup;
 			children = (
 				B5FD471A29D6AC6F007DA4C8 /* ParkingInfo */,
+				B56AB7872A04FCD8004AB3CF /* InfoWidget */,
 				B5FD471929D6AC6F007DA4C8 /* Products */,
 				A0ABBD82452BB443F8233DEB /* Pods */,
 				F290F11ABEE21136BA083A02 /* Frameworks */,
@@ -160,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */,
+				B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -189,6 +263,7 @@
 			isa = PBXGroup;
 			children = (
 				B5304C5829E7D385007C1060 /* Info.swift */,
+				B56AB79D2A0746C5004AB3CF /* Comment.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -235,6 +310,8 @@
 			isa = PBXGroup;
 			children = (
 				9B595645E673E94072F3CE4D /* Pods_ParkingInfo.framework */,
+				B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */,
+				B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -242,6 +319,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B56AB79A2A04FCD9004AB3CF /* Build configuration list for PBXNativeTarget "InfoWidgetExtension" */;
+			buildPhases = (
+				B56AB77E2A04FCD8004AB3CF /* Sources */,
+				B56AB77F2A04FCD8004AB3CF /* Frameworks */,
+				B56AB7802A04FCD8004AB3CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InfoWidgetExtension;
+			productName = InfoWidgetExtension;
+			productReference = B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B5FD471729D6AC6F007DA4C8 /* ParkingInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5FD472F29D6AC70007DA4C8 /* Build configuration list for PBXNativeTarget "ParkingInfo" */;
@@ -251,10 +345,12 @@
 				B5FD471529D6AC6F007DA4C8 /* Frameworks */,
 				B5FD471629D6AC6F007DA4C8 /* Resources */,
 				37EEFC32AA75830ACCEC0DBB /* [CP] Embed Pods Frameworks */,
+				B56AB7972A04FCD9004AB3CF /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B56AB7952A04FCD9004AB3CF /* PBXTargetDependency */,
 			);
 			name = ParkingInfo;
 			productName = ParkingInfo;
@@ -268,9 +364,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
+					B56AB7812A04FCD8004AB3CF = {
+						CreatedOnToolsVersion = 14.3;
+					};
 					B5FD471729D6AC6F007DA4C8 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -290,11 +389,20 @@
 			projectRoot = "";
 			targets = (
 				B5FD471729D6AC6F007DA4C8 /* ParkingInfo */,
+				B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B56AB7802A04FCD8004AB3CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56AB7902A04FCD9004AB3CF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5FD471629D6AC6F007DA4C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,6 +458,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B56AB77E2A04FCD8004AB3CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B56AB7922A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */,
+				B56AB78B2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift in Sources */,
+				B56AB78D2A04FCD8004AB3CF /* InfoWidget.swift in Sources */,
+				B56AB7892A04FCD8004AB3CF /* InfoWidgetBundle.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B5FD471429D6AC6F007DA4C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -359,9 +478,10 @@
 				B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */,
 				B5304C6729E9A289007C1060 /* MainCoordinator.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
-				B56AB7782A023A05004AB3CF /* APIService.swift in Sources */,
+				B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */,
 				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
 				B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */,
+				B56AB7A02A07ACCC004AB3CF /* AppleLoginManager.swift in Sources */,
 				B5304C5F29E7DF45007C1060 /* HomeCell.swift in Sources */,
 				B5304C5929E7D385007C1060 /* Info.swift in Sources */,
 				B527B39329DA4E7F007B3355 /* HomeViewModel.swift in Sources */,
@@ -374,6 +494,9 @@
 				B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */,
 				B5304C6529E98D05007C1060 /* Coordinator.swift in Sources */,
 				B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */,
+				B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */,
+				B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */,
+				B56AB7932A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */,
 				B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */,
 				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
 				B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */,
@@ -381,6 +504,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B56AB7952A04FCD9004AB3CF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */;
+			targetProxy = B56AB7942A04FCD9004AB3CF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5FD472129D6AC6F007DA4C8 /* Main.storyboard */ = {
@@ -402,6 +533,62 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B56AB7982A04FCD9004AB3CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InfoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minjae.ParkingInfo.InfoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B56AB7992A04FCD9004AB3CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AU24ZRJ649;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = InfoWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = InfoWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Minjae.ParkingInfo.InfoWidget;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		B5FD472D29D6AC70007DA4C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -520,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F73404F98F37D99BC432C1D /* Pods-ParkingInfo.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -549,6 +737,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 568095187EB8B34530DC66F8 /* Pods-ParkingInfo.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -577,6 +766,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B56AB79A2A04FCD9004AB3CF /* Build configuration list for PBXNativeTarget "InfoWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B56AB7982A04FCD9004AB3CF /* Debug */,
+				B56AB7992A04FCD9004AB3CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		B5FD471329D6AC6F007DA4C8 /* Build configuration list for PBXProject "ParkingInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

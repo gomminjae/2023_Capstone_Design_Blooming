@@ -6,6 +6,21 @@
 //
 
 import Foundation
+import RxSwift
+
+enum NetworkError: Error {
+    case error(String)
+    case defaultError
+    
+    var message: String? {
+        switch self {
+        case let .error(msg):
+            return msg
+        case .defaultError:
+            return "잠시 후에 다시 시도해주세요."
+        }
+    }
+}
 
 
 enum ResponseResult {
@@ -24,4 +39,8 @@ struct StatusCodeResponse {
         default: return .failure
         }
     }
+}
+
+protocol InfoNetwork {
+    func getInfos() -> Observable<Result<[Info], NetworkError>>
 }
