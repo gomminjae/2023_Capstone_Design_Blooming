@@ -47,6 +47,20 @@ class APIService: APICompose {
         }
     }
     
+    func postToken(token: Dictionary<String, Any>) {
+        let url = "http://15.164.140.81:8080/getToken?value"
+        AF.request(url,method: .post, parameters: token, encoding: URLEncoding.queryString)
+            .responseData { response in
+                switch response.result {
+                case .success:
+                    print("POST 성공")
+                case .failure(let error):
+                    print(error)
+                }
+        }
+        
+    }
+    
     
     
 }
