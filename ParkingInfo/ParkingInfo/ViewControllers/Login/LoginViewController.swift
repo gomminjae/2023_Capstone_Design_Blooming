@@ -12,7 +12,6 @@ import KakaoSDKAuth
 import KakaoSDKUser
 import AuthenticationServices
 
-
 class LoginViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
@@ -20,7 +19,7 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        kakaoLoginButton.addTarget(self, action: #selector(loginByKakao()), for: .touchUpInside)
+        kakaoLoginButton.addTarget(self, action: #selector(loginByKakao), for: .touchUpInside)
     }
     
     private func setupInitialVC() {
@@ -68,6 +67,14 @@ class LoginViewController: BaseViewController {
                     //let token = oauthToken
                     if oauthToken?.accessToken != nil {
                         self.setupInitialVC()
+                        do {
+                            let dic = try oauthToken?.encode()
+                            print("------->\(String(describing: dic))")
+                            InfoNetworkImpl.shared.postToken(token: dic!)
+                        } catch {
+                            print(error)
+                            print("post error")
+                        }
                     }
 
                 }
@@ -75,12 +82,12 @@ class LoginViewController: BaseViewController {
         }
     }
     
-    @objc
-    func loginByApple() {
-        let request = ASAuthorizationAppleIDProvider().createRequest()
-        request.requestedScopes = [.fullName,.email]
-    }
-    
+//    @objc
+//    func loginByApple() {
+//        let request = ASAuthorizationAppleIDProvider().createRequest()
+//        request.requestedScopes = [.fullName,.email]
+//    }
+//
     
     override func setupView() {
         
@@ -171,12 +178,12 @@ class LoginViewController: BaseViewController {
     
 }
 
-extension LoginViewController: ASAuthorizationControllerDelegate {
-    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        
-    }
-    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-            
-    }
-    
-}
+//extension LoginViewController: ASAuthorizationControllerDelegate {
+//    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+//
+//    }
+//    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+//
+//    }
+//
+//}

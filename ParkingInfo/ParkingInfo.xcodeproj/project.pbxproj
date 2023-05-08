@@ -16,8 +16,6 @@
 		B5304C5C29E7DF01007C1060 /* ReusableIdenrifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C5B29E7DF01007C1060 /* ReusableIdenrifier.swift */; };
 		B5304C5F29E7DF45007C1060 /* HomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C5E29E7DF45007C1060 /* HomeCell.swift */; };
 		B5304C6229E80A72007C1060 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C6129E80A72007C1060 /* HeaderView.swift */; };
-		B5304C6529E98D05007C1060 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C6429E98D05007C1060 /* Coordinator.swift */; };
-		B5304C6729E9A289007C1060 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C6629E9A289007C1060 /* MainCoordinator.swift */; };
 		B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB73E29FBFC85004AB3CF /* LoginManager.swift */; };
 		B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */; };
 		B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */; };
@@ -26,15 +24,6 @@
 		B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */; };
 		B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */; };
 		B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */; };
-		B56AB7842A04FCD8004AB3CF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */; };
-		B56AB7862A04FCD8004AB3CF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */; };
-		B56AB7892A04FCD8004AB3CF /* InfoWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */; };
-		B56AB78B2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */; };
-		B56AB78D2A04FCD8004AB3CF /* InfoWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */; };
-		B56AB7902A04FCD9004AB3CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */; };
-		B56AB7922A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */; };
-		B56AB7932A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */; };
-		B56AB7962A04FCD9004AB3CF /* InfoWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */; };
 		B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79D2A0746C5004AB3CF /* Comment.swift */; };
 		B56AB7A02A07ACCC004AB3CF /* AppleLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79F2A07ACCB004AB3CF /* AppleLoginManager.swift */; };
@@ -48,16 +37,6 @@
 		B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B56AB7942A04FCD9004AB3CF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B5FD471029D6AC6F007DA4C8 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B56AB7812A04FCD8004AB3CF;
-			remoteInfo = InfoWidgetExtension;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
 		B56AB7972A04FCD9004AB3CF /* Embed Foundation Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -65,7 +44,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				B56AB7962A04FCD9004AB3CF /* InfoWidgetExtension.appex in Embed Foundation Extensions */,
 			);
 			name = "Embed Foundation Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -73,7 +51,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1F79E1F0E7514F1294C3670A /* Pods_ParkingInfo_InfoWidgetExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingInfo_InfoWidgetExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		568095187EB8B34530DC66F8 /* Pods-ParkingInfo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo.release.xcconfig"; path = "Target Support Files/Pods-ParkingInfo/Pods-ParkingInfo.release.xcconfig"; sourceTree = "<group>"; };
+		5CB75260E38CB1A85B947D84 /* Pods-ParkingInfo-InfoWidgetExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo-InfoWidgetExtension.debug.xcconfig"; path = "Target Support Files/Pods-ParkingInfo-InfoWidgetExtension/Pods-ParkingInfo-InfoWidgetExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		9B595645E673E94072F3CE4D /* Pods_ParkingInfo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ParkingInfo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9F73404F98F37D99BC432C1D /* Pods-ParkingInfo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo.debug.xcconfig"; path = "Target Support Files/Pods-ParkingInfo/Pods-ParkingInfo.debug.xcconfig"; sourceTree = "<group>"; };
 		B527B38B29D992A7007B3355 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
@@ -84,8 +64,6 @@
 		B5304C5B29E7DF01007C1060 /* ReusableIdenrifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableIdenrifier.swift; sourceTree = "<group>"; };
 		B5304C5E29E7DF45007C1060 /* HomeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCell.swift; sourceTree = "<group>"; };
 		B5304C6129E80A72007C1060 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
-		B5304C6429E98D05007C1060 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		B5304C6629E9A289007C1060 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		B56AB73E29FBFC85004AB3CF /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
 		B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
@@ -94,15 +72,8 @@
 		B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNetworkImpl.swift; sourceTree = "<group>"; };
 		B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeResponse.swift; sourceTree = "<group>"; };
-		B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = InfoWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
 		B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
-		B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidgetBundle.swift; sourceTree = "<group>"; };
-		B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidgetLiveActivity.swift; sourceTree = "<group>"; };
-		B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoWidget.swift; sourceTree = "<group>"; };
-		B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = InfoWidget.intentdefinition; sourceTree = "<group>"; };
-		B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B56AB7912A04FCD9004AB3CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extension.swift"; sourceTree = "<group>"; };
 		B56AB79D2A0746C5004AB3CF /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		B56AB79F2A07ACCB004AB3CF /* AppleLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginManager.swift; sourceTree = "<group>"; };
@@ -116,18 +87,10 @@
 		B5FD472A29D6AC70007DA4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5FD472C29D6AC70007DA4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		E7E382DA1260EEF19A49C6A5 /* Pods-ParkingInfo-InfoWidgetExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ParkingInfo-InfoWidgetExtension.release.xcconfig"; path = "Target Support Files/Pods-ParkingInfo-InfoWidgetExtension/Pods-ParkingInfo-InfoWidgetExtension.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B56AB77F2A04FCD8004AB3CF /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B56AB7862A04FCD8004AB3CF /* SwiftUI.framework in Frameworks */,
-				B56AB7842A04FCD8004AB3CF /* WidgetKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5FD471529D6AC6F007DA4C8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -144,6 +107,8 @@
 			children = (
 				9F73404F98F37D99BC432C1D /* Pods-ParkingInfo.debug.xcconfig */,
 				568095187EB8B34530DC66F8 /* Pods-ParkingInfo.release.xcconfig */,
+				5CB75260E38CB1A85B947D84 /* Pods-ParkingInfo-InfoWidgetExtension.debug.xcconfig */,
+				E7E382DA1260EEF19A49C6A5 /* Pods-ParkingInfo-InfoWidgetExtension.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -178,15 +143,6 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		B5304C6329E98761007C1060 /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				B5304C6429E98D05007C1060 /* Coordinator.swift */,
-				B5304C6629E9A289007C1060 /* MainCoordinator.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
 		B56AB76C29FFF17B004AB3CF /* Board */ = {
 			isa = PBXGroup;
 			children = (
@@ -205,24 +161,10 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
-		B56AB7872A04FCD8004AB3CF /* InfoWidget */ = {
-			isa = PBXGroup;
-			children = (
-				B56AB7882A04FCD8004AB3CF /* InfoWidgetBundle.swift */,
-				B56AB78A2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift */,
-				B56AB78C2A04FCD8004AB3CF /* InfoWidget.swift */,
-				B56AB78E2A04FCD8004AB3CF /* InfoWidget.intentdefinition */,
-				B56AB78F2A04FCD9004AB3CF /* Assets.xcassets */,
-				B56AB7912A04FCD9004AB3CF /* Info.plist */,
-			);
-			path = InfoWidget;
-			sourceTree = "<group>";
-		};
 		B5FD470F29D6AC6F007DA4C8 = {
 			isa = PBXGroup;
 			children = (
 				B5FD471A29D6AC6F007DA4C8 /* ParkingInfo */,
-				B56AB7872A04FCD8004AB3CF /* InfoWidget */,
 				B5FD471929D6AC6F007DA4C8 /* Products */,
 				A0ABBD82452BB443F8233DEB /* Pods */,
 				F290F11ABEE21136BA083A02 /* Frameworks */,
@@ -233,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */,
-				B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -241,7 +182,6 @@
 		B5FD471A29D6AC6F007DA4C8 /* ParkingInfo */ = {
 			isa = PBXGroup;
 			children = (
-				B5304C6329E98761007C1060 /* Coordinator */,
 				B5304C6029E80A66007C1060 /* Components */,
 				B5304C5A29E7DEF3007C1060 /* Extension */,
 				B5FD474429D6AD0F007DA4C8 /* Manager */,
@@ -312,6 +252,7 @@
 				9B595645E673E94072F3CE4D /* Pods_ParkingInfo.framework */,
 				B56AB7832A04FCD8004AB3CF /* WidgetKit.framework */,
 				B56AB7852A04FCD8004AB3CF /* SwiftUI.framework */,
+				1F79E1F0E7514F1294C3670A /* Pods_ParkingInfo_InfoWidgetExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -319,23 +260,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B56AB79A2A04FCD9004AB3CF /* Build configuration list for PBXNativeTarget "InfoWidgetExtension" */;
-			buildPhases = (
-				B56AB77E2A04FCD8004AB3CF /* Sources */,
-				B56AB77F2A04FCD8004AB3CF /* Frameworks */,
-				B56AB7802A04FCD8004AB3CF /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = InfoWidgetExtension;
-			productName = InfoWidgetExtension;
-			productReference = B56AB7822A04FCD8004AB3CF /* InfoWidgetExtension.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		B5FD471729D6AC6F007DA4C8 /* ParkingInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5FD472F29D6AC70007DA4C8 /* Build configuration list for PBXNativeTarget "ParkingInfo" */;
@@ -350,7 +274,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				B56AB7952A04FCD9004AB3CF /* PBXTargetDependency */,
 			);
 			name = ParkingInfo;
 			productName = ParkingInfo;
@@ -367,9 +290,6 @@
 				LastSwiftUpdateCheck = 1430;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
-					B56AB7812A04FCD8004AB3CF = {
-						CreatedOnToolsVersion = 14.3;
-					};
 					B5FD471729D6AC6F007DA4C8 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -389,20 +309,11 @@
 			projectRoot = "";
 			targets = (
 				B5FD471729D6AC6F007DA4C8 /* ParkingInfo */,
-				B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B56AB7802A04FCD8004AB3CF /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B56AB7902A04FCD9004AB3CF /* Assets.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5FD471629D6AC6F007DA4C8 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -458,17 +369,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		B56AB77E2A04FCD8004AB3CF /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B56AB7922A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */,
-				B56AB78B2A04FCD8004AB3CF /* InfoWidgetLiveActivity.swift in Sources */,
-				B56AB78D2A04FCD8004AB3CF /* InfoWidget.swift in Sources */,
-				B56AB7892A04FCD8004AB3CF /* InfoWidgetBundle.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B5FD471429D6AC6F007DA4C8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -476,7 +376,6 @@
 				B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */,
 				B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */,
 				B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */,
-				B5304C6729E9A289007C1060 /* MainCoordinator.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
 				B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */,
 				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
@@ -492,11 +391,9 @@
 				B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */,
 				B5304C5C29E7DF01007C1060 /* ReusableIdenrifier.swift in Sources */,
 				B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */,
-				B5304C6529E98D05007C1060 /* Coordinator.swift in Sources */,
 				B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */,
 				B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */,
 				B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */,
-				B56AB7932A04FCD9004AB3CF /* InfoWidget.intentdefinition in Sources */,
 				B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */,
 				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
 				B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */,
@@ -504,14 +401,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B56AB7952A04FCD9004AB3CF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B56AB7812A04FCD8004AB3CF /* InfoWidgetExtension */;
-			targetProxy = B56AB7942A04FCD9004AB3CF /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B5FD472129D6AC6F007DA4C8 /* Main.storyboard */ = {
@@ -533,62 +422,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		B56AB7982A04FCD9004AB3CF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AU24ZRJ649;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = InfoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = InfoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Minjae.ParkingInfo.InfoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		B56AB7992A04FCD9004AB3CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AU24ZRJ649;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = InfoWidget/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = InfoWidget;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = Minjae.ParkingInfo.InfoWidget;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		B5FD472D29D6AC70007DA4C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -707,7 +540,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F73404F98F37D99BC432C1D /* Pods-ParkingInfo.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -737,7 +569,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 568095187EB8B34530DC66F8 /* Pods-ParkingInfo.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -766,15 +597,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B56AB79A2A04FCD9004AB3CF /* Build configuration list for PBXNativeTarget "InfoWidgetExtension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B56AB7982A04FCD9004AB3CF /* Debug */,
-				B56AB7992A04FCD9004AB3CF /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		B5FD471329D6AC6F007DA4C8 /* Build configuration list for PBXProject "ParkingInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

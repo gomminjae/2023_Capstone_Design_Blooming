@@ -17,7 +17,4 @@ extension Encodable {
     }
 }
 
-[
-    Token: ""
-    
-]
+

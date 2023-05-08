@@ -13,4 +13,7 @@ target 'ParkingInfo' do
   pod 'KakaoSDKAuth'
   pod 'KakaoSDKUser'
   pod 'Firebase/Messaging'
+
+  target 'InfoWidgetExtension' do 
+  end 
 end

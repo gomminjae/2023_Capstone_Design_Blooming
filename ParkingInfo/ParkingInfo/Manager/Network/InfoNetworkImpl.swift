@@ -34,7 +34,7 @@ class InfoNetworkImpl {
     }
     
     func postToken(token: Dictionary<String, Any>) {
-        let url = "http://15.164.140.81:8080/getToken?value"
+        let url = "http://15.164.140.81:8080/login"
         AF.request(url,method: .post, parameters: token, encoding: URLEncoding.queryString)
             .responseData { response in
                 switch response.result {
@@ -60,9 +60,18 @@ private extension InfoNetworkImpl {
         components.scheme = InfoAPI.scheme
         components.host = InfoAPI.host
         components.path = "/dummy"
-        
         return components
     }
+    
+    func makepostTokenComponents() -> URLComponents {
+        var components = URLComponents()
+        components.scheme = InfoAPI.scheme
+        components.host = InfoAPI.host
+        components.path = "/login"
+        return components
+    }
+    
+    
     
     
 }
