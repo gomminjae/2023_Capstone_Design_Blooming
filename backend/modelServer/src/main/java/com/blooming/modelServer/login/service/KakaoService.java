@@ -47,7 +47,6 @@ public class KakaoService {
         }
     }
 
-    // custom
     public KakaoInfo getInfo(final String access_token, final String token_type) {
         log.debug("token = {}", access_token);
         try {
@@ -56,6 +55,7 @@ public class KakaoService {
         } catch (Exception e) {
             log.error("something error..", e);
             return KakaoInfo.fail();
+    // custom
         }
     }
     public KakaoToken getToken(final String code) {

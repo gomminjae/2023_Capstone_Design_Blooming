@@ -18,14 +18,6 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class tokenController {
     private final KakaoService kakaoService;
-
-    //    @PostMapping("/login")
-//    public String getToken(@RequestParam("access_token") String access_token, @RequestParam("expires_in") String expires_in, @RequestParam("refresh_token") String refresh_token, @RequestParam("refresh_token_expires_in") String refresh_token_expires_in,@RequestParam("token_type") String token_type) {
-//
-//        KakaoAccount test = kakaoService.getInfo(access_token, token_type).getKakaoAccount();
-//
-//        return test.getProfile().getNickname();
-//    }
     @PostMapping(value = "/login", produces = MediaType.APPLICATION_JSON_VALUE)
     public String getToken(@RequestBody Map<String, String> kakaoToken) {
         log.debug("TOKEN: " + kakaoToken.get("accessToken") );
@@ -34,5 +26,13 @@ public class tokenController {
 
         return test.getProfile().getNickname();
     }
+//    @PostMapping("/login")
+//    public String getToken(@RequestParam("accessToken") String access_token, @RequestParam("refreshToken") String refresh_token, @RequestParam("tokenType") String token_type) {
+//
+//        KakaoAccount test = kakaoService.getInfo(access_token, token_type).getKakaoAccount();
+//
+//        return test.getProfile().getNickname();
+//    }
+
 
 }
