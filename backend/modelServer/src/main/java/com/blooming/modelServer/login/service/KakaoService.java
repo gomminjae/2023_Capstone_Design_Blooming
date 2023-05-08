@@ -47,6 +47,17 @@ public class KakaoService {
         }
     }
 
+    // custom
+    public KakaoInfo getInfo(final String access_token, final String token_type) {
+        log.debug("token = {}", access_token);
+        try {
+            log.debug(client.getInfo(new URI(kakaoUserApiUrl), token_type + " " + access_token).toString());
+            return client.getInfo(new URI(kakaoUserApiUrl), token_type + " " + access_token);
+        } catch (Exception e) {
+            log.error("something error..", e);
+            return KakaoInfo.fail();
+        }
+    }
     public KakaoToken getToken(final String code) {
         try {
             return client.getToken(new URI(kakaoAuthUrl), restapiKey, redirectUrl, code, "authorization_code");

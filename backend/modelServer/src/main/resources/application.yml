@@ -11,29 +11,22 @@ kakao:
 logging:
   level:
     com.blooming.modelServer: debug
+    org.springframework.web: debug
 
+#spring:
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+#
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: 1234
+#    url: jdbc:mysql:localhost:3306/test_db??useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
 
-
-spring:
-
-  h2:
-    console:
-      enabled: true
-
-  datasource:
-    url: jdbc:h2:mem:testdb;
-    driver-class-name: org.h2.Driver
-    username: sa
-    password:
-
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-    hibernate:
-      ddl-auto: create-drop
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: true
-    defer-datasource-initialization: true
 
 #https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1fa8ddfa3f479c16a3a0e513b5078e59&redirect_uri=http://15.164.140.81:8080/callback
