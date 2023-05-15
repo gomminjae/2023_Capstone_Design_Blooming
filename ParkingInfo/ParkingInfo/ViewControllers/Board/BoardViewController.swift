@@ -14,24 +14,12 @@ import WebKit
 /*MARK: URL: 광주: https://www.gjtic.go.kr/parking
  서울: https://parking.seoul.go.kr/#
  인천: https://parking.incheon.go.kr/
-*/
-enum SegmentOption: Int {
-    case seoul
-    case gwangju
-    case incheon
-    
-    var cityName: String {
-        switch self {
-        case .seoul: return "서울"
-        case .gwangju: return "광주"
-        default: return "인천 미추홀"
-        }
-    }
-}
+*/ 
 
 class BoardViewController: BaseViewController {
     
     private let disposeBag = DisposeBag()
+    private let viewModel = BoardViewModel()
     
 
     override func viewDidLoad() {
@@ -68,27 +56,20 @@ class BoardViewController: BaseViewController {
     
     override func bindRx() {
         
-        let selectedOption = BehaviorRelay<SegmentOption>(value: .seoul)
-        
-        selectedOption
-            .subscribe(onNext: { [weak self] option in
-                guard let self = self else { return }
-                if let url = self.generateURL(option) {
-                    let request = URLRequest(url: url)
-                    self.webView.load(request)
-                }
-            })
-            .disposed(by: disposeBag)
-        
         segmentedControl.rx.selectedSegmentIndex
             .map { SegmentOption(rawValue: $0) }
             .compactMap { $0 }
-            .bind(to: selectedOption)
+            .bind(to: viewModel.selectedOption)
             .disposed(by: disposeBag)
         
-        
-        
-        
+        viewModel.urlForLoad
+            .compactMap { $0 }
+            .subscribe(onNext: { [weak self] url in
+                guard let self = self else { return }
+                let request = URLRequest(url: url)
+                self.webView.load(request)
+            })
+            .disposed(by: disposeBag)
     }
     
     private func setupSegmentControl() {
@@ -102,20 +83,6 @@ class BoardViewController: BaseViewController {
         segmentedControl.selectedSegmentIndex = 0
     }
     
-    private func generateURL(_ option: SegmentOption) -> URL? {
-        var urlString: String
-        
-        switch option {
-        case .seoul:
-            urlString = "https://parking.seoul.go.kr/#"
-        case .gwangju:
-            urlString = "https://www.gjtic.go.kr/parking"
-        default:
-            urlString = "https://parking.incheon.go.kr/"
-        }
-        
-        return URL(string: urlString)
-    }
     
     
     //MARK: UI

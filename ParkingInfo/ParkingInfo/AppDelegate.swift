@@ -28,6 +28,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
         UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
         application.registerForRemoteNotifications()
+        KakaoSDK.initSDK(appKey: "")
+//        FirebaseApp.configure()
+//        Messaging.messaging().delegate = self
+//        UNUserNotificationCenter.current().delegate = self
+//
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//
+//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+//        application.registerForRemoteNotifications()
         return true
     }
 
