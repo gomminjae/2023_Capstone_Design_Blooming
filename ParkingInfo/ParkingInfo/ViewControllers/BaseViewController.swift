@@ -30,7 +30,7 @@ class BaseViewController: UIViewController {
     private func setupNavBar() {
         let titleLabel = UILabel()
         titleLabel.text = " Blooming"
-        titleLabel.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        titleLabel.font = UIFont.systemFont(ofSize: 35, weight: .bold)
         titleLabel.textColor = .white
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: titleLabel)
         
