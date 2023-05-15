@@ -45,9 +45,10 @@ class LoginViewController: BaseViewController {
                     if oauthToken?.accessToken != nil {
                         self.setupInitialVC()
                         do {
-                            let dic = try oauthToken?.encode()
-                            print("------->\(String(describing: dic))")
-                            InfoNetworkImpl.shared.postToken(token: dic!)
+                            guard let token = oauthToken else { return }
+                            print("======>\(token)")
+                            let dic = try token.encodeToPostDic()
+                            InfoNetworkImpl.shared.postToken(params: dic)
                         } catch {
                             print(error)
                             print("post error")
@@ -68,15 +69,18 @@ class LoginViewController: BaseViewController {
                     if oauthToken?.accessToken != nil {
                         self.setupInitialVC()
                         do {
-                            let dic = try oauthToken?.encode()
-                            print("------->\(String(describing: dic))")
-                            InfoNetworkImpl.shared.postToken(token: dic!)
+                            guard let token = oauthToken else { return }
+                            print("======>\(token)")
+                            let dic = try token.encodeToPostDic()
+                            print("---------->\(dic)")
+                            print("====>\(type(of: dic))")
+                           InfoNetworkImpl.shared.postToken(params: dic)
                         } catch {
                             print(error)
                             print("post error")
                         }
+        
                     }
-
                 }
             }
         }

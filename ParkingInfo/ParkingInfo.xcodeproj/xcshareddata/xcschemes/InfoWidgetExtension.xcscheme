@@ -15,7 +15,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "B56AB7812A04FCD8004AB3CF"
+               BlueprintIdentifier = "B56AB7A42A08DB50004AB3CF"
                BuildableName = "InfoWidgetExtension.appex"
                BlueprintName = "InfoWidgetExtension"
                ReferencedContainer = "container:ParkingInfo.xcodeproj">
@@ -61,7 +61,7 @@
          BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B56AB7812A04FCD8004AB3CF"
+            BlueprintIdentifier = "B56AB7A42A08DB50004AB3CF"
             BuildableName = "InfoWidgetExtension.appex"
             BlueprintName = "InfoWidgetExtension"
             ReferencedContainer = "container:ParkingInfo.xcodeproj">
