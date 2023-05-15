@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        KakaoSDK.initSDK(appKey: "80b450ba401310dabb48513dc9ef6a80")
+        KakaoSDK.initSDK(appKey: "")
 //        FirebaseApp.configure()
 //        Messaging.messaging().delegate = self
 //        UNUserNotificationCenter.current().delegate = self
