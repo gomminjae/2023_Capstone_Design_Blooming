@@ -19,7 +19,6 @@ class LoginViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        kakaoLoginButton.addTarget(self, action: #selector(loginByKakao), for: .touchUpInside)
     }
     
     private func setupInitialVC() {
@@ -29,69 +28,6 @@ class LoginViewController: BaseViewController {
         vc.modalTransitionStyle = .coverVertical
         self.present(vc, animated: true)
     }
-    
-    
-    @objc
-    func loginByKakao() {
-        if (UserApi.isKakaoTalkLoginAvailable()) {
-
-            //카톡 설치되어있으면 -> 카톡으로 로그인
-            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("카카오 톡으로 로그인 성공")
-
-                    if oauthToken?.accessToken != nil {
-                        self.setupInitialVC()
-                        do {
-                            guard let token = oauthToken else { return }
-                            print("======>\(token)")
-                            let dic = try token.encodeToPostDic()
-                            InfoNetworkImpl.shared.postToken(params: dic)
-                        } catch {
-                            print(error)
-                            print("post error")
-                        }
-                    }
-                }
-            }
-        } else {
-
-            // 카톡 없으면 -> 계정으로 로그인
-            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
-                if let error = error {
-                    print(error)
-                } else {
-                    print("카카오 계정으로 로그인 성공")
-
-                    //let token = oauthToken
-                    if oauthToken?.accessToken != nil {
-                        self.setupInitialVC()
-                        do {
-                            guard let token = oauthToken else { return }
-                            print("======>\(token)")
-                            let dic = try token.encodeToPostDic()
-                            print("---------->\(dic)")
-                            print("====>\(type(of: dic))")
-                           InfoNetworkImpl.shared.postToken(params: dic)
-                        } catch {
-                            print(error)
-                            print("post error")
-                        }
-        
-                    }
-                }
-            }
-        }
-    }
-    
-//    @objc
-//    func loginByApple() {
-//        let request = ASAuthorizationAppleIDProvider().createRequest()
-//        request.requestedScopes = [.fullName,.email]
-//    }
-//
     
     override func setupView() {
         
@@ -131,10 +67,15 @@ class LoginViewController: BaseViewController {
         }
         
         
-        
     }
     override func bindRx() {
-        
+        kakaoLoginButton.rx.tap
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.login {
+                    self?.setupInitialVC()
+                }
+            })
+            .disposed(by: disposeBag)
         
         
     }
@@ -181,13 +122,3 @@ class LoginViewController: BaseViewController {
     }()
     
 }
-
-//extension LoginViewController: ASAuthorizationControllerDelegate {
-//    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//
-//    }
-//    private func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-//
-//    }
-//
-//}

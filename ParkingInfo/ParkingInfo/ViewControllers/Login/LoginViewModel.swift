@@ -12,60 +12,76 @@ import KakaoSDKAuth
 import KakaoSDKUser
 
 
-
-protocol ViewModelType {
-    var disposeBag: DisposeBag { get set }
-    
-    associatedtype Input
-    associatedtype Output
-}
-
 class LoginViewModel {
     
     private let disposeBag = DisposeBag()
     
+    let isLoggedIn: Observable<Bool>
     
-//    func Login() {
-//        if (UserApi.isKakaoTalkLoginAvailable()) {
-//
-//            //카톡 설치되어있으면 -> 카톡으로 로그인
-//            UserApi.shared.loginWithKakaoTalk {(oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                } else {
-//                    print("카카오 톡으로 로그인 성공")
-//
-//                    if oauthToken?.accessToken != nil {
-//                        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-//                        let vc = storyBoard.instantiateViewController(identifier: "")
-//
-//                    }
-//                }
-//            }
-//        } else {
-//            // 카톡 없으면 -> 계정으로 로그인
-//            UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
-//                if let error = error {
-//                    print(error)
-//                } else {
-//                    print("카카오 계정으로 로그인 성공")
-//
-//                    //let token = oauthToken
-//                    if oauthToken?.accessToken != nil {
-//                        let vc = UINavigationController(rootViewController: HomeViewController())
-//                        vc.modalPresentationStyle = .fullScreen
-//                        //self.present(vc, animated: true)
-//                    }
-//
-//                }
-//            }
-//        }
-        
-//.    }
+    init() {
+        isLoggedIn = Observable.create { observer in
+            if AuthApi.hasToken() {
+                observer.onNext(true)
+            } else {
+                observer.onNext(false)
+            }
+            
+            observer.onCompleted()
+            return Disposables.create()
+        }
+    }
     
     
+    func login(completion: @escaping () -> Void) {
+        if UserApi.isKakaoTalkLoginAvailable() {
+            loginWithKakaotalk()
+        }else { loginWithKakaoAccount()}
+    }
+    
+    func logout() {
+        UserApi.shared.logout { error in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            print("logout Sucessful")
+        }
+    }
     
     
+    private func loginWithKakaotalk() {
+        UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard (oauthToken?.accessToken) != nil else {
+                print("token is missing")
+                return
+            }
+            
+            print("kakao talk login sucessful")
+        }
+    }
     
-    
+    private func loginWithKakaoAccount() {
+        UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard (oauthToken?.accessToken) != nil else {
+                print("token is missing")
+                return
+            }
+            
+            print("kakao talk login sucessful")
+        }
+    }
 }
+
+
+
+
