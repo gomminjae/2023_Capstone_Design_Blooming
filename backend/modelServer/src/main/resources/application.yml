@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+
+kakao:
+  authUrl: https://kauth.kakao.com/oauth/token
+  userApiUrl: https://kapi.kakao.com/v2/user/me
+  restapiKey: 1fa8ddfa3f479c16a3a0e513b5078e59
+  redirectUrl: http://15.164.140.81:8080/callback
+
+logging:
+  level:
+    com.blooming.modelServer: debug
+    org.springframework.web: debug
+
+#spring:
+#  jpa:
+#    show-sql: true
+#    hibernate:
+#      ddl-auto: update
+#    properties:
+#      hibernate:
+#        format_sql: true
+#
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    username: root
+#    password: 1234
+#    url: jdbc:mysql:localhost:3306/test_db??useSSL=false&useUnicode=true&serverTimezone=Asia/Seoul
+
+
+#https://kauth.kakao.com/oauth/authorize?response_type=code&client_id=1fa8ddfa3f479c16a3a0e513b5078e59&redirect_uri=http://15.164.140.81:8080/callback

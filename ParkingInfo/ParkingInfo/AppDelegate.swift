@@ -7,14 +7,36 @@
 
 import UIKit
 import CoreData
+import KakaoSDKCommon
+import FirebaseMessaging
+import Firebase
+import FirebaseCore
 
 @main
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, MessagingDelegate {
 
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        KakaoSDK.initSDK(appKey: "80b450ba401310dabb48513dc9ef6a80")
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        UNUserNotificationCenter.current().delegate = self
+
+        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+
+        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+        application.registerForRemoteNotifications()
+        KakaoSDK.initSDK(appKey: "")
+//        FirebaseApp.configure()
+//        Messaging.messaging().delegate = self
+//        UNUserNotificationCenter.current().delegate = self
+//
+//        let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+//
+//        UNUserNotificationCenter.current().requestAuthorization(options: authOptions) { _, _ in }
+//        application.registerForRemoteNotifications()
         return true
     }
 
@@ -30,6 +52,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        let deviceTokenString = deviceToken.reduce("", { $0 + String(format: "%02X", $1)})
+        print("[Log] deviceToken :", deviceTokenString)
+        
+        Messaging.messaging().apnsToken = deviceToken
     }
 
     // MARK: - Core Data stack
@@ -78,4 +107,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
 }
-
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+      }
+      
+      func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+      }
+}
