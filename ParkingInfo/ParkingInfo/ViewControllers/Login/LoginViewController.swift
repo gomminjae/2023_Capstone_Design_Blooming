@@ -39,8 +39,6 @@ class LoginViewController: BaseViewController {
         view.addSubview(appleLoginButton)
         view.addSubview(naverLoginButton)
         
-        
-        
     }
     override func setupLayout() {
         topBaseView.snp.makeConstraints {
@@ -63,10 +61,7 @@ class LoginViewController: BaseViewController {
             $0.top.equalTo(topBaseView.snp.bottom).offset(40)
             $0.leading.equalTo(view).inset(40)
             $0.trailing.equalTo(view).inset(40)
-            
         }
-        
-        
     }
     override func bindRx() {
         kakaoLoginButton.rx.tap

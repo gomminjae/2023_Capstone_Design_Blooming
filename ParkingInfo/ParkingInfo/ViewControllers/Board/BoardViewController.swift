@@ -39,14 +39,14 @@ class BoardViewController: BaseViewController {
     
     override func setupLayout() {
         segmentedControl.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(20)
             $0.leading.equalTo(view).inset(20)
             $0.trailing.equalTo(view).inset(20)
-            $0.height.equalTo(60)
+            $0.height.equalTo(40)
 
         }
         webView.snp.makeConstraints {
-            $0.top.equalTo(segmentedControl.snp.bottom)
+            $0.top.equalTo(segmentedControl.snp.bottom).offset(20)
             $0.leading.equalTo(view)
             $0.trailing.equalTo(view)
             $0.bottom.equalTo(view)
@@ -90,6 +90,11 @@ class BoardViewController: BaseViewController {
     let segmentedControl: UISegmentedControl = {
         let control = UISegmentedControl()
         control.selectedSegmentIndex = 0
+        control.backgroundColor = .blueBackground
+        control.layer.borderWidth = 0.8
+        control.layer.borderColor = UIColor.offWhite.cgColor
+        control.selectedSegmentTintColor = .offWhite
+        control.setTitleTextAttributes([NSAttributedString.Key.font: UIFont.systemFont(ofSize: 20, weight: .bold)], for: .normal)
         return control
       }()
     

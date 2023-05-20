@@ -7,8 +7,8 @@ Original file is located at
     https://colab.research.google.com/drive/1F4tvVFHWvhoJ8slRwqGA1rCEagzazHXR
 """
 
-from google.colab import drive
-drive.mount('/content/drive')
+#from google.colab import drive
+#drive.mount('/content/drive')
 
 import os, glob
 import scipy
@@ -20,13 +20,13 @@ from keras.layers import GlobalAveragePooling2D, Dense
 from keras.models import Model, load_model
 from keras.callbacks import ModelCheckpoint
 
-!apt-get -qq install -y libarchive-dev && pip install -U libarchive
+#!apt-get -qq install -y libarchive-dev && pip install -U libarchive
 import libarchive
-!apt-get -qq install -y graphviz && pip install pydot
+#!apt-get -qq install -y graphviz && pip install pydot
 import pydot
-!pip install keras --upgrade
-!pip install matplotlib-venn
-!apt-get -qq install -y libfluidsynth1
+#!pip install keras --upgrade
+#!pip install matplotlib-venn
+#!apt-get -qq install -y libfluidsynth1
 
 from tensorflow.keras.preprocessing.image import img_to_array
 import cv2

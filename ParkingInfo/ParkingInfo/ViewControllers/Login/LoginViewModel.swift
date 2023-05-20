@@ -31,7 +31,6 @@ class LoginViewModel {
         }
     }
     
-    
     func login(completion: @escaping () -> Void) {
         if UserApi.isKakaoTalkLoginAvailable() {
             loginWithKakaotalk()
@@ -76,6 +75,16 @@ class LoginViewModel {
                 print("token is missing")
                 return
             }
+            
+            if let token = oauthToken {
+                do {
+                    let postDic = try token.encodeToPostDic()
+                    InfoNetworkImpl.shared.postToServer(params: postDic)
+                } catch {
+                    print(error.localizedDescription)
+                }
+            }
+            
             
             print("kakao talk login sucessful")
         }
