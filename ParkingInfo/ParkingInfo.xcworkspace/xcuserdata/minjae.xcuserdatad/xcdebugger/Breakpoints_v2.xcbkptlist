@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "52935EEB-ADAF-43C7-AF70-0F96513EA478"
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BEAA2E16-25D8-4444-AE1F-973F5916BC1C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ParkingInfo/Extension/Encodable+Extension.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "encodeToPostDic()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BEAA2E16-25D8-4444-AE1F-973F5916BC1C - f4d1f91a1258f023"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Swift.Encodable.encodeToPostDic() throws -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
+                  moduleName = "ParkingInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minjae/Desktop/2023_Capstone_Design_Blooming/ParkingInfo/ParkingInfo/Extension/Encodable+Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "572">
+               </Location>
+               <Location
+                  uuid = "BEAA2E16-25D8-4444-AE1F-973F5916BC1C - 2d593d44ee470b0d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Any) -&gt; Swift.Optional&lt;Swift.String&gt; in Swift.Encodable.encodeToPostDic() throws -&gt; Swift.Dictionary&lt;Swift.String, Swift.String&gt;"
+                  moduleName = "ParkingInfo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/minjae/Desktop/2023_Capstone_Design_Blooming/ParkingInfo/ParkingInfo/Extension/Encodable+Extension.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
