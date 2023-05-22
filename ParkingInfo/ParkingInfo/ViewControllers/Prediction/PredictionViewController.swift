@@ -19,7 +19,7 @@ class PredictionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let inputData = convertImageToMultiArray(image: UIImage(named: "test1.jpeg")!)
+        let inputData = convertImageToMultiArray(image: UIImage(named: "test1")!)
         guard let model = try? Blooming(configuration: MLModelConfiguration()) else {
             fatalError("Loading Model Failed")
         }
@@ -32,15 +32,29 @@ class PredictionViewController: BaseViewController {
            
            do {
                let output = try model.prediction(input: input)
-               print(output.Identity)
+               print((output.Identity[1]))
            } catch {
                // 예측 실패
+               print("Prediction fail")
            }
         } else {
            // 모델 타입 불일치
+            print("model type error")
         }
         // Do any additional setup after loading the view.
+        
     }
+    override func setupView() {
+        view.addSubview(imageView)
+        imageView.image = UIImage(named: "test3")
+        
+        imageView.snp.makeConstraints {
+            $0.centerX.equalTo(view)
+            $0.centerY.equalTo(view)
+            $0.width.height.equalTo(300)
+        }
+    }
+    
 
     func convertImageToMultiArray(image: UIImage) -> MLMultiArray {
         let resizedImage = resizeImage(image: image, newSize: CGSize(width: 224, height: 224))
@@ -70,6 +84,9 @@ class PredictionViewController: BaseViewController {
         UIGraphicsEndImageContext()
         return resizedImage
     }
+    
+    //MARK: UI
+    let imageView: UIImageView = UIImageView()
 
 }
 

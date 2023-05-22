@@ -10,56 +10,61 @@ import RxSwift
 import RxCocoa
 import KakaoSDKAuth
 import KakaoSDKUser
+import AuthenticationServices
 
 
-class LoginViewModel {
+enum LoginResult {
+    case success(token: String)
+    case failure(error: Error)
+}
+
+class LoginViewModel: NSObject {
     
     private let disposeBag = DisposeBag()
     
-    let isLoggedIn: Observable<Bool>
+    let kakaoLoginResult: PublishSubject<LoginResult> = PublishSubject()
+    let appleLoginResult: PublishSubject<LoginResult> = PublishSubject()
     
-    init() {
-        isLoggedIn = Observable.create { observer in
-            if AuthApi.hasToken() {
-                observer.onNext(true)
-            } else {
-                observer.onNext(false)
-            }
-            
-            observer.onCompleted()
-            return Disposables.create()
-        }
-    }
-    
-    func login(completion: @escaping () -> Void) {
+    func kakaoLogin() {
         if UserApi.isKakaoTalkLoginAvailable() {
             loginWithKakaotalk()
-        }else { loginWithKakaoAccount()}
-    }
-    
-    func logout() {
-        UserApi.shared.logout { error in
-            if let error = error {
-                print(error)
-                return
-            }
-            
-            print("logout Sucessful")
+        } else{
+            loginWithKakaoAccount()
         }
     }
     
+    func appleLogin() {
+         let appleIDProvider = ASAuthorizationAppleIDProvider()
+         let request = appleIDProvider.createRequest()
+         request.requestedScopes = [.fullName, .email]
+         
+         let authorizationController =
+         ASAuthorizationController(authorizationRequests: [request])
+         authorizationController.delegate = self
+         authorizationController.presentationContextProvider = self
+         authorizationController.performRequests()
+     }
+    
+    func handleLoginSuccess() {
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let sceneDelegate = windowScene.delegate as? SceneDelegate,
+           let tabBarController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "tabbar") as? UITabBarController {
+            sceneDelegate.window?.rootViewController = tabBarController
+        }
+    }
     
     private func loginWithKakaotalk() {
         UserApi.shared.loginWithKakaoTalk { (oauthToken, error) in
             if let error = error {
-                print(error)
+                let result = LoginResult.failure(error: error)
+                self.kakaoLoginResult.onNext(result)
                 return
+            } else {
+                if let token = oauthToken?.accessToken {
+                    let result = LoginResult.success(token: token)
+                    self.kakaoLoginResult.onNext(result)
+                }
             }
-            guard (oauthToken?.accessToken) != nil else {
-                print("token is missing")
-                return
-            }
-            
             print("kakao talk login sucessful")
         }
     }
@@ -67,27 +72,47 @@ class LoginViewModel {
     private func loginWithKakaoAccount() {
         UserApi.shared.loginWithKakaoAccount { (oauthToken, error) in
             if let error = error {
-                print(error)
+                let result = LoginResult.failure(error: error)
+                self.kakaoLoginResult.onNext(result)
                 return
-            }
-            
-            guard (oauthToken?.accessToken) != nil else {
-                print("token is missing")
-                return
-            }
-            
-            if let token = oauthToken {
-                do {
-                    let postDic = try token.encodeToPostDic()
-                    InfoNetworkImpl.shared.postToServer(params: postDic)
-                } catch {
-                    print(error.localizedDescription)
+            } else {
+                if let token = oauthToken?.accessToken {
+                    let result = LoginResult.success(token: token)
+                    self.kakaoLoginResult.onNext(result)
                 }
             }
-            
-            
+           
             print("kakao talk login sucessful")
         }
+    }
+}
+
+extension LoginViewModel: ASAuthorizationControllerDelegate {
+    
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
+        if let appleIDCredential = authorization.credential as? ASAuthorizationAppleIDCredential {
+
+            let token = appleIDCredential.identityToken?.base64EncodedString() ?? ""
+            let result = LoginResult.success(token: token)
+            appleLoginResult.onNext(result)
+        }
+    }
+    
+    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
+
+        let result = LoginResult.failure(error: error)
+        appleLoginResult.onNext(result)
+    }
+}
+
+extension LoginViewModel: ASAuthorizationControllerPresentationContextProviding {
+    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
+        // Apple 로그인 컨트롤러의 표시 위치를 지정합니다.
+        guard let scene = UIApplication.shared.connectedScenes.first as? UIWindowScene else {
+            fatalError("No active UIWindowScene available.")
+        }
+        return scene.windows.first ?? UIWindow()
     }
 }
 

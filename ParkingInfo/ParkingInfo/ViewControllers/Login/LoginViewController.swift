@@ -62,18 +62,52 @@ class LoginViewController: BaseViewController {
             $0.leading.equalTo(view).inset(40)
             $0.trailing.equalTo(view).inset(40)
         }
+        appleLoginButton.snp.makeConstraints {
+            $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(20)
+            $0.leading.equalTo(kakaoLoginButton)
+            $0.trailing.equalTo(kakaoLoginButton)
+        }
     }
     override func bindRx() {
         kakaoLoginButton.rx.tap
             .subscribe(onNext: { [weak self] in
-                self?.viewModel.login {
-                    self?.setupInitialVC()
+                self?.viewModel.kakaoLogin()
+            })
+            .disposed(by: disposeBag)
+        
+        appleLoginButton.rx.controlEvent(.touchUpInside)
+            .subscribe(onNext: { [weak self] in
+                self?.viewModel.appleLogin()
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.kakaoLoginResult
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(_):
+                    print("kakao Login Success")
+                    self?.viewModel.handleLoginSuccess()
+                case .failure(_):
+                    print("kakao Login fail")
                 }
             })
             .disposed(by: disposeBag)
         
-        
+        viewModel.appleLoginResult
+            .subscribe(onNext: { [weak self] result in
+                switch result {
+                case .success(_):
+                    print("Apple Login Success")
+                    self?.viewModel.handleLoginSuccess()
+                case .failure(_):
+                    print("Apple Login fail")
+                }
+            })
+            .disposed(by: disposeBag)
     }
+    @objc private func handleAppleLoginTap() {
+            // ASAuthorizationAppleIDButton의 탭 이벤트 처리를 위한 액션 메서드
+        }
     
     //MARK: UI
     let titleLabel: UILabel = {
@@ -104,9 +138,9 @@ class LoginViewController: BaseViewController {
         return button
     }()
     
-    let appleLoginButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("Apple Login", for: .normal)
+    var appleLoginButton: ASAuthorizationAppleIDButton = {
+        let button = ASAuthorizationAppleIDButton()
+        button.addTarget(self, action: #selector(handleAppleLoginTap), for: .touchUpInside)
         return button
     }()
     

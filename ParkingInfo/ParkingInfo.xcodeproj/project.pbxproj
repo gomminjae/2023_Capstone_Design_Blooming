@@ -18,7 +18,7 @@
 		B5304C6229E80A72007C1060 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5304C6129E80A72007C1060 /* HeaderView.swift */; };
 		B54635452A19201200F0F140 /* PredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635442A19201200F0F140 /* PredictionViewController.swift */; };
 		B54635482A19215300F0F140 /* Blooming.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B54635472A19215300F0F140 /* Blooming.mlmodel */; };
-		B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB73E29FBFC85004AB3CF /* LoginManager.swift */; };
+		B54635662A1AFC0500F0F140 /* PredictionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */; };
 		B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */; };
 		B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */; };
 		B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7712A000549004AB3CF /* TabbarViewController.swift */; };
@@ -64,7 +64,7 @@
 		B5304C6129E80A72007C1060 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		B54635442A19201200F0F140 /* PredictionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
 		B54635472A19215300F0F140 /* Blooming.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Blooming.mlmodel; path = ../../model/Blooming.mlmodel; sourceTree = "<group>"; };
-		B56AB73E29FBFC85004AB3CF /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewModel.swift; sourceTree = "<group>"; };
 		B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		B56AB7712A000549004AB3CF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
@@ -146,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				B54635442A19201200F0F140 /* PredictionViewController.swift */,
+				B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */,
 			);
 			path = Prediction;
 			sourceTree = "<group>";
@@ -241,7 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				B56AB7792A023A4A004AB3CF /* Network */,
-				B56AB73E29FBFC85004AB3CF /* LoginManager.swift */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -386,7 +386,6 @@
 			files = (
 				B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */,
 				B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */,
-				B56AB73F29FBFC85004AB3CF /* LoginManager.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
 				B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */,
 				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
@@ -407,6 +406,7 @@
 				B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */,
 				B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */,
 				B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */,
+				B54635662A1AFC0500F0F140 /* PredictionViewModel.swift in Sources */,
 				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
 				B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */,
 			);
