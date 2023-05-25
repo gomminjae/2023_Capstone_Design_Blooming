@@ -1,0 +1,9 @@
+service:
+  image: tensorflow/serving
+  restart: always
+  volumes:
+    - ./models:/models/parkingLot
+  environment:
+    - MODEL_NAME=parkingLot
+  ports:
+    - "80:8501"

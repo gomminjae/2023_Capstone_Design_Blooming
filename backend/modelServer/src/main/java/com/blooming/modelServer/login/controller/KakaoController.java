@@ -1,6 +1,7 @@
 package com.blooming.modelServer.login.controller;
 
 import com.blooming.modelServer.login.dto.KakaoAccount;
+import com.blooming.modelServer.login.dto.KakaoInfo;
 import com.blooming.modelServer.login.dto.KakaoToken;
 import com.blooming.modelServer.login.service.KakaoService;
 import lombok.RequiredArgsConstructor;
@@ -20,11 +21,9 @@ public class KakaoController {
     private final KakaoService kakaoService;
     //카카오 인증서버에서 accessToken/refreshToken 받아옴.
 
-    @GetMapping("/callback")
+    @GetMapping("/callbacks")
     public KakaoAccount getKakaoAccount(@RequestParam("code") String code) {
         log.debug("code = {}", code);
-        KakaoAccount test = kakaoService.getInfo(code).getKakaoAccount();
-        log.debug(test.getProfile().getNickname());
-        return test;
+        return kakaoService.getInfo(code).getKakaoAccount();
     }
 }
