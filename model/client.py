@@ -1,11 +1,13 @@
 import json
-
 import numpy as np
 import requests
-from keras.utils import img_to_array, load_img
+
+from PIL import Image
 
 # Read the image file and convert it to an array
-test_img = img_to_array(load_img('image.jpg', target_size=(224, 224, 3)))
+image = Image.open('image.jpg')
+image = image.resize((224, 224))
+test_img = np.array(image)
 
 # Reshape the image array to have a 4-dimensional shape
 test_img = np.expand_dims(test_img, axis=0)
@@ -15,7 +17,7 @@ data = json.dumps({"signature_name": "serving_default", "instances": test_img.to
 
 # Send a POST request
 headers = {"content-type": "application/json"}
-json_response = requests.post('http://localhost:8501/v1/models/parking:predict', data=data, headers=headers)
+json_response = requests.post('http://blooming-parking-lot.ap-northeast-2.elasticbeanstalk.com/v1/models/parking:predict', data=data, headers=headers)
 
 predictions = json.loads(json_response.text)
 print(predictions)
