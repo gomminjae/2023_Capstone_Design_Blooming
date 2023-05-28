@@ -2,18 +2,28 @@ import torch
 from flask import Flask, jsonify, request
 from PIL import Image
 
-
 app = Flask(__name__)
 
 model = torch.hub.load('ultralytics/yolov5', 'custom', path='./best.pt')
 
 
+# 설정값 변경 (413 에러 해결)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 예시: 16MB
+app.config['UPLOAD_MAX_FILESIZE'] = 16 * 1024 * 1024
+app.config['POST_MAX_SIZE'] = 16 * 1024 * 1024
+
+@app.route("/", methods=["GET"])
+def hello():
+    return "hello"
+
+
 @app.route("/prediction", methods=["POST"])
 def predict():
+    # request.environ['CONTENT_TYPE'] = 'multipart/form-data'
+    print(request)
     image_file = request.files['image']
     image = Image.open(image_file)
     results = model(image)
-    results.show()
     # Results
     predictions = results.pandas().xyxy[0]
 
@@ -24,4 +34,4 @@ def predict():
 
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host="0.0.0.0", port=5000)
