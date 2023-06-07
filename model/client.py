@@ -1,23 +1,21 @@
-import json
-import numpy as np
+
+
 import requests
 
-from PIL import Image
+# 서버 URL 설정
+url = 'http://15.164.140.81:8080/prediction'
 
-# Read the image file and convert it to an array
-image = Image.open('image.jpg')
-image = image.resize((224, 224))
-test_img = np.array(image)
+# 이미지 파일 경로 설정
+image_path = "image.jpeg"
 
-# Reshape the image array to have a 4-dimensional shape
-test_img = np.expand_dims(test_img, axis=0)
+# 파일을 담을 딕셔너리 생성
+files = {'image': open(image_path, 'rb')}
 
-# JSON data construction
-data = json.dumps({"signature_name": "serving_default", "instances": test_img.tolist()})
+# JSON 데이터 생성
+data = {'parkingLotName': 'IT융합대학'}
 
-# Send a POST request
-headers = {"content-type": "application/json"}
-json_response = requests.post('http://blooming-parking-lot.ap-northeast-2.elasticbeanstalk.com/v1/models/parking:predict', data=data, headers=headers)
+# Send the POST request to the server with proper Content-Type header
+response = requests.post(url, files=files, data=data)
 
-predictions = json.loads(json_response.text)
-print(predictions)
+# 응답 출력
+print(response.text)
