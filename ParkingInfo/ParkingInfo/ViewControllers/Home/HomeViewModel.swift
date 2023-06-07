@@ -8,29 +8,52 @@
 import Foundation
 import RxSwift
 import RxCocoa
+import KakaoSDKAuth
+import KakaoSDKUser
+import KakaoSDKCommon
+import RxKakaoSDKUser
+import RxKakaoSDKCommon
+import RxKakaoSDKAuth
+
 
 
 protocol HomeViewModelBindable {
-    
     associatedtype Input
     associatedtype Output
-    
-    
 }
 
 class HomeViewModel {
+    private let disposeBag = DisposeBag()
+    var infos: Observable<[Info]> = InfoNetworkImpl.shared.fetchInfos()
     
-    var infos: Observable<[Info]> = InfoNetworkImpl.shared.fetchPosts()
-    
-    var dummy: Observable<[Info]> = Observable.of([
-        Info(parkinglotsTitle: "조선대 IT 교수용 주차장", parkingState: "full", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 IT 서쪽 주차장", parkingState: "free", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 IT 동쪽 주차장", parkingState: "normal", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 법대 주차장", parkingState: "full", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 본관 남쪽 주차장", parkingState: "free", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 본관 서쪽 주차장", parkingState: "normal", timeStamp: "2023-03-22 09:00"),
-        Info(parkinglotsTitle: "조선대 미대 주차장", parkingState: "full", timeStamp: "2023-03-22 09:00")
-    ])
+
+
+//    func getUserProfileInkakao() {
+//
+//        UserApi.shared.rx.me()
+//            .map({ (user) -> User in
+//                var scopes = [String]()
+//
+//                if (user.kakaoAccount?.profileNeedsAgreement == true) { scopes.append("profile") }
+//                if (user.kakaoAccount?.emailNeedsAgreement == true) { scopes.append("account_email") }
+//                if (scopes.count > 0) {
+//                    print("사용자에게 추가 동의를 받아야 합니다.")
+//                    throw SdkError(scopes:scopes)
+//                } else {
+//                    print("사용자의 추가 동의가 필요하지 않습니다.")
+//                    return user
+//                }
+//            })
+//            .retry(when: Auth.shared.rx.incrementalAuthorizationRequired())
+//            .subscribe(onSuccess: { (user) in
+//                print("me(): success.")
+//
+//                _ = user
+//            }, onFailure: { error in
+//                print(error)
+//            })
+//            .disposed(by: disposeBag)
+//    }
 
     
 }

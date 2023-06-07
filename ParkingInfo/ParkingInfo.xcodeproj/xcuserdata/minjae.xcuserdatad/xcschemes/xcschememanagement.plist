@@ -4,15 +4,31 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>InfoWidgetExtension.xcscheme_^#shared#^_</key>
+		<key>Copy of InfoWidgetExtension.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<false/>
 			<key>orderHint</key>
-			<integer>18</integer>
+			<integer>1</integer>
+		</dict>
+		<key>InfoWidgetExtension.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>0</integer>
+		</dict>
+		<key>ParkingExtension.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+			<key>orderHint</key>
+			<integer>26</integer>
 		</dict>
 		<key>ParkingInfo.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>19</integer>
+			<integer>2</integer>
 		</dict>
 		<key>Rx (Playground) 1.xcscheme</key>
 		<dict>
@@ -60,6 +76,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B56AB7812A04FCD8004AB3CF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B58400112A2F8F5C006EA101</key>
 		<dict>
 			<key>primary</key>
 			<true/>

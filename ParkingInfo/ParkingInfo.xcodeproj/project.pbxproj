@@ -19,10 +19,12 @@
 		B54635452A19201200F0F140 /* PredictionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635442A19201200F0F140 /* PredictionViewController.swift */; };
 		B54635482A19215300F0F140 /* Blooming.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = B54635472A19215300F0F140 /* Blooming.mlmodel */; };
 		B54635662A1AFC0500F0F140 /* PredictionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */; };
+		B54635682A21BC7400F0F140 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635672A21BC7400F0F140 /* TestViewController.swift */; };
+		B546356A2A238C6100F0F140 /* Prediction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B54635692A238C6100F0F140 /* Prediction.swift */; };
+		B546356C2A238F1500F0F140 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546356B2A238F1500F0F140 /* UIImage+Extension.swift */; };
 		B56AB76E29FFF1CF004AB3CF /* BoardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */; };
 		B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */; };
 		B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7712A000549004AB3CF /* TabbarViewController.swift */; };
-		B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7732A0152B4004AB3CF /* CurvedView.swift */; };
 		B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */; };
 		B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */; };
 		B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */; };
@@ -30,10 +32,10 @@
 		B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = B56AB79D2A0746C5004AB3CF /* Comment.swift */; };
 		B56AB7B72A08DF14004AB3CF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B56AB7B62A08DF14004AB3CF /* GoogleService-Info.plist */; };
 		B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */; };
+		B58400262A309480006EA101 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58400252A309480006EA101 /* DetailViewController.swift */; };
 		B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */; };
 		B5FD471E29D6AC6F007DA4C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */; };
 		B5FD472329D6AC6F007DA4C8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FD472129D6AC6F007DA4C8 /* Main.storyboard */; };
-		B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B5FD472429D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld */; };
 		B5FD472829D6AC70007DA4C8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5FD472729D6AC70007DA4C8 /* Assets.xcassets */; };
 		B5FD472B29D6AC70007DA4C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5FD472929D6AC70007DA4C8 /* LaunchScreen.storyboard */; };
 		B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FD474629D6AD33007DA4C8 /* HomeViewController.swift */; };
@@ -65,10 +67,12 @@
 		B54635442A19201200F0F140 /* PredictionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewController.swift; sourceTree = "<group>"; };
 		B54635472A19215300F0F140 /* Blooming.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = Blooming.mlmodel; path = ../../model/Blooming.mlmodel; sourceTree = "<group>"; };
 		B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionViewModel.swift; sourceTree = "<group>"; };
+		B54635672A21BC7400F0F140 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		B54635692A238C6100F0F140 /* Prediction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prediction.swift; sourceTree = "<group>"; };
+		B546356B2A238F1500F0F140 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		B56AB76D29FFF1CF004AB3CF /* BoardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewController.swift; sourceTree = "<group>"; };
 		B56AB76F29FFF469004AB3CF /* BoardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoardViewModel.swift; sourceTree = "<group>"; };
 		B56AB7712A000549004AB3CF /* TabbarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbarViewController.swift; sourceTree = "<group>"; };
-		B56AB7732A0152B4004AB3CF /* CurvedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurvedView.swift; sourceTree = "<group>"; };
 		B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoNetworkImpl.swift; sourceTree = "<group>"; };
 		B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCodeResponse.swift; sourceTree = "<group>"; };
@@ -79,11 +83,11 @@
 		B56AB7B62A08DF14004AB3CF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B56AB7B82A08E424004AB3CF /* ParkingInfo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ParkingInfo.entitlements; sourceTree = "<group>"; };
 		B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		B58400252A309480006EA101 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B5FD471829D6AC6F007DA4C8 /* ParkingInfo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ParkingInfo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5FD471B29D6AC6F007DA4C8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B5FD471D29D6AC6F007DA4C8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		B5FD472229D6AC6F007DA4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		B5FD472529D6AC6F007DA4C8 /* ParkingInfo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ParkingInfo.xcdatamodel; sourceTree = "<group>"; };
 		B5FD472729D6AC70007DA4C8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5FD472A29D6AC70007DA4C8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5FD472C29D6AC70007DA4C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -118,7 +122,6 @@
 			children = (
 				B527B38E29D996AC007B3355 /* LoginViewController.swift */,
 				B527B39029DA4E10007B3355 /* LoginViewModel.swift */,
-				B56AB7732A0152B4004AB3CF /* CurvedView.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -130,6 +133,7 @@
 				B57408FF29F51E8700E11E92 /* UIColor+Extension.swift */,
 				B56AB7752A0154A2004AB3CF /* UIView+Extension.swift */,
 				B56AB79B2A06914B004AB3CF /* Encodable+Extension.swift */,
+				B546356B2A238F1500F0F140 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -146,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				B54635442A19201200F0F140 /* PredictionViewController.swift */,
+				B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */,
 				B54635652A1AFC0500F0F140 /* PredictionViewModel.swift */,
 			);
 			path = Prediction;
@@ -164,7 +169,6 @@
 			isa = PBXGroup;
 			children = (
 				B56AB7772A023A05004AB3CF /* InfoNetworkImpl.swift */,
-				B56AB77C2A023D3E004AB3CF /* StatusCodeResponse.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -205,7 +209,6 @@
 				B5FD472929D6AC70007DA4C8 /* LaunchScreen.storyboard */,
 				B5FD472C29D6AC70007DA4C8 /* Info.plist */,
 				B56AB7B62A08DF14004AB3CF /* GoogleService-Info.plist */,
-				B5FD472429D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld */,
 			);
 			path = ParkingInfo;
 			sourceTree = "<group>";
@@ -215,6 +218,7 @@
 			children = (
 				B5304C5829E7D385007C1060 /* Info.swift */,
 				B56AB79D2A0746C5004AB3CF /* Comment.swift */,
+				B54635692A238C6100F0F140 /* Prediction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -234,6 +238,7 @@
 				B527B38D29D996A0007B3355 /* Login */,
 				B5FD474529D6AD22007DA4C8 /* Home */,
 				B527B38B29D992A7007B3355 /* BaseViewController.swift */,
+				B54635672A21BC7400F0F140 /* TestViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -253,6 +258,7 @@
 				B527B39229DA4E7F007B3355 /* HomeViewModel.swift */,
 				B5304C5E29E7DF45007C1060 /* HomeCell.swift */,
 				B56AB7712A000549004AB3CF /* TabbarViewController.swift */,
+				B58400252A309480006EA101 /* DetailViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -386,13 +392,14 @@
 			files = (
 				B527B38F29D996AC007B3355 /* LoginViewController.swift in Sources */,
 				B56AB77D2A023D3E004AB3CF /* StatusCodeResponse.swift in Sources */,
+				B546356A2A238C6100F0F140 /* Prediction.swift in Sources */,
 				B527B38C29D992A7007B3355 /* BaseViewController.swift in Sources */,
 				B56AB7782A023A05004AB3CF /* InfoNetworkImpl.swift in Sources */,
-				B5FD472629D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld in Sources */,
 				B56AB77029FFF469004AB3CF /* BoardViewModel.swift in Sources */,
 				B5304C5F29E7DF45007C1060 /* HomeCell.swift in Sources */,
 				B5304C5929E7D385007C1060 /* Info.swift in Sources */,
 				B527B39329DA4E7F007B3355 /* HomeViewModel.swift in Sources */,
+				B546356C2A238F1500F0F140 /* UIImage+Extension.swift in Sources */,
 				B56AB7722A000549004AB3CF /* TabbarViewController.swift in Sources */,
 				B5FD471C29D6AC6F007DA4C8 /* AppDelegate.swift in Sources */,
 				B5304C6229E80A72007C1060 /* HeaderView.swift in Sources */,
@@ -402,13 +409,14 @@
 				B5304C5C29E7DF01007C1060 /* ReusableIdenrifier.swift in Sources */,
 				B54635482A19215300F0F140 /* Blooming.mlmodel in Sources */,
 				B56AB7762A0154A2004AB3CF /* UIView+Extension.swift in Sources */,
+				B54635682A21BC7400F0F140 /* TestViewController.swift in Sources */,
 				B5FD474729D6AD33007DA4C8 /* HomeViewController.swift in Sources */,
 				B56AB79C2A06914B004AB3CF /* Encodable+Extension.swift in Sources */,
 				B56AB79E2A0746C5004AB3CF /* Comment.swift in Sources */,
 				B574090029F51E8700E11E92 /* UIColor+Extension.swift in Sources */,
 				B54635662A1AFC0500F0F140 /* PredictionViewModel.swift in Sources */,
 				B527B39129DA4E10007B3355 /* LoginViewModel.swift in Sources */,
-				B56AB7742A0152B4004AB3CF /* CurvedView.swift in Sources */,
+				B58400262A309480006EA101 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,19 +638,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		B5FD472429D6AC6F007DA4C8 /* ParkingInfo.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				B5FD472529D6AC6F007DA4C8 /* ParkingInfo.xcdatamodel */,
-			);
-			currentVersion = B5FD472529D6AC6F007DA4C8 /* ParkingInfo.xcdatamodel */;
-			path = ParkingInfo.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = B5FD471029D6AC6F007DA4C8 /* Project object */;
 }

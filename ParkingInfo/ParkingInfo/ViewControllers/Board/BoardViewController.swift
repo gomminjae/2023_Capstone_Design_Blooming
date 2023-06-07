@@ -90,7 +90,6 @@ class BoardViewController: BaseViewController {
     let segmentedControl: UISegmentedControl = {
         let control = UISegmentedControl()
         control.selectedSegmentIndex = 0
-        control.backgroundColor = .blueBackground
         control.layer.borderWidth = 0.8
         control.layer.borderColor = UIColor.offWhite.cgColor
         control.selectedSegmentTintColor = .offWhite

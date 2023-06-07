@@ -7,6 +7,7 @@
 
 import UIKit
 import SnapKit
+import CircleProgressBar
 
 
 class HomeCell: UICollectionViewCell {
@@ -25,10 +26,9 @@ class HomeCell: UICollectionViewCell {
         self.layer.cornerRadius = 18
         addSubview(titleLabel)
         
-        addSubview(stateView)
-        addSubview(starredView)
         addSubview(timeStampLabel)
-        stateView.addSubview(stateLabel)
+        addSubview(parkingSeatLabel)
+        addSubview(circleProgressBar)
         
         
         titleLabel.snp.makeConstraints {
@@ -37,34 +37,48 @@ class HomeCell: UICollectionViewCell {
             $0.width.equalTo(self.frame.width / 3 * 2)
         }
         
-        starredView.snp.makeConstraints {
-            $0.top.equalTo(titleLabel)
-            $0.trailing.equalTo(self).inset(10)
-            $0.leading.equalTo(titleLabel.snp.trailing).offset(40)
-            $0.bottom.equalTo(titleLabel)
-        }
         
         timeStampLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(5)
             $0.leading.equalTo(titleLabel)
-            $0.trailing.equalTo(titleLabel.snp.trailing)
+           
         }
         
-        stateView.snp.makeConstraints {
-            $0.top.equalTo(timeStampLabel.snp.bottom).offset(10)
-            $0.trailing.equalTo(starredView.snp.trailing)
-            $0.leading.equalTo(titleLabel.snp.trailing)
-            $0.bottom.equalTo(self).inset(20)
-            
+        
+        parkingSeatLabel.snp.makeConstraints {
+            $0.top.equalTo(timeStampLabel.snp.bottom).offset(20)
+            $0.leading.equalTo(timeStampLabel)
         }
         
-        stateLabel.snp.makeConstraints {
-            $0.top.equalTo(stateView)
-            $0.trailing.equalTo(stateView)
-            $0.leading.equalTo(stateView)
-            $0.bottom.equalTo(stateView)
+        circleProgressBar.snp.makeConstraints {
+            $0.width.equalTo(100)
+            $0.height.equalTo(100)
+            $0.trailing.equalTo(self).inset(20)
+            $0.top.equalTo(titleLabel)
         }
     
+    }
+    func configure(with model: Info) {
+        titleLabel.text = model.parkinglotsTitle
+        parkingSeatLabel.text = "남은 자리: \(model.empty)"
+        timeStampLabel.text = model.timeStamp
+        let progress = Double(model.empty) / Double(model.total)
+        circleProgressBar.setProgress(progress, animated: true)
+        print(progress)
+        
+        circleProgressBar.progressBarProgressColor = .redTitle
+        circleProgressBar.progressBarTrackColor = .redBackground
+        
+        if progress <= 0.5 {
+            circleProgressBar.progressBarProgressColor = .blueTitle
+            circleProgressBar.progressBarTrackColor = .blueBackground
+        } else if progress < 1 {
+            circleProgressBar.progressBarProgressColor = .greenTitle
+            circleProgressBar.progressBarTrackColor = .greenBackground
+        } else {
+            circleProgressBar.progressBarProgressColor = .redTitle
+            circleProgressBar.progressBarTrackColor = .redBackground
+        }
     }
     
     //MARK: UI
@@ -72,42 +86,41 @@ class HomeCell: UICollectionViewCell {
         let label = UILabel()
         label.textColor = .black
         //label.backgroundColor = .lightGray
-        label.font = UIFont.systemFont(ofSize: 23, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 26, weight: .bold)
         return label
-    }()
-    
-    let stateView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .redBackground
-        view.layer.cornerRadius = 15
-        return view
-    }()
-    
-    let stateLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .redTitle
-        label.text = "Full"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        return label
-    }()
-    
-    let starredView: UIButton = {
-        let button = UIButton()
-        //button.backgroundColor = .red
-        button.setImage(UIImage(named: "star.fill"), for: .normal)
-        return button
     }()
     
     let timeStampLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .redBackground
-        //label.text = "2023-04-17 9:00"
-        label.textColor = .redTitle
         label.layer.cornerRadius = 10
         label.clipsToBounds = true
         label.textAlignment = .center
+        label.textColor = .lightGray
         return label
     }()
+    
+    let parkingSeatLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
+        return label
+    }()
+    
+    let circleProgressBar: CircleProgressBar = {
+        let bar = CircleProgressBar()
+        
+//        let color1 = UIColor(red: 0.22, green: 0.42, blue: 0.99, alpha: 1.00)
+//        let color2 = UIColor(red: 0.16, green: 0.28, blue: 1.00, alpha: 1.00)
+//        let gradientColor = UIColor.createGradientColor(startColor: color1, endColor: color2, size: CGSize(width: 200, height: 200))
+        //bar.progressBarProgressColor = .blueTitle
+        bar.progressBarWidth = 20
+        bar.hintTextFont = UIFont.systemFont(ofSize: 20, weight: .bold)
+        bar.hintTextColor = .black
+        bar.hintViewBackgroundColor = .offWhite
+        bar.backgroundColor = .offWhite
+       // bar.progressBarTrackColor = .blueBackground
+        
+        return bar
+    }()
+    
     
 }

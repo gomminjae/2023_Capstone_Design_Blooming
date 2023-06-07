@@ -8,18 +8,17 @@
 import Foundation
 
 
-struct Info: Codable, Equatable {
+struct Info: Codable {
     
     var parkinglotsTitle: String
-    var parkingState: String
-    var isStarred: Bool?
     var timeStamp: String
-    
+    var total: Int
+    var empty: Int
     
     private enum CodingKeys: String, CodingKey {
-        case parkinglotsTitle = "parkingLotName"
-        case parkingState = "status"
-        case isStarred = "favorite"
+        case parkinglotsTitle = "title"
+        case total
+        case empty
         case timeStamp
     }
     

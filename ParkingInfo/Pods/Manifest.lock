@@ -1,5 +1,6 @@
 PODS:
-  - Alamofire (5.6.4)
+  - Alamofire (5.7.0)
+  - CircleProgressBar (0.32)
   - Firebase/CoreOnly (10.9.0):
     - FirebaseCore (= 10.9.0)
   - Firebase/Messaging (10.9.0):
@@ -63,26 +64,52 @@ PODS:
   - nanopb/decode (2.30909.0)
   - nanopb/encode (2.30909.0)
   - PromisesObjC (2.2.0)
+  - RxAlamofire (6.1.1):
+    - RxAlamofire/Core (= 6.1.1)
+  - RxAlamofire/Core (6.1.1):
+    - Alamofire (~> 5.4)
+    - RxSwift (~> 6.0)
   - RxCocoa (6.5.0):
     - RxRelay (= 6.5.0)
     - RxSwift (= 6.5.0)
+  - RxKakaoSDKAuth (2.14.0):
+    - KakaoSDKAuth (= 2.14.0)
+    - RxKakaoSDKCommon (= 2.14.0)
+  - RxKakaoSDKCommon (2.14.0):
+    - RxKakaoSDKCommon/Common (= 2.14.0)
+    - RxKakaoSDKCommon/Network (= 2.14.0)
+  - RxKakaoSDKCommon/Common (2.14.0):
+    - KakaoSDKCommon/Common (= 2.14.0)
+    - RxCocoa
+    - RxSwift (~> 6.0)
+  - RxKakaoSDKCommon/Network (2.14.0):
+    - KakaoSDKCommon/Network (= 2.14.0)
+    - RxAlamofire (~> 6.0)
+    - RxKakaoSDKCommon/Common (= 2.14.0)
+  - RxKakaoSDKUser (2.14.0):
+    - KakaoSDKUser (= 2.14.0)
+    - RxKakaoSDKAuth (= 2.14.0)
   - RxRelay (6.5.0):
     - RxSwift (= 6.5.0)
   - RxSwift (6.5.0)
   - SnapKit (5.6.0)
 
 DEPENDENCIES:
+  - CircleProgressBar (~> 0.32)
   - Firebase/Messaging
   - KakaoSDKAuth
   - KakaoSDKCommon
   - KakaoSDKUser
   - RxCocoa
+  - RxKakaoSDKAuth
+  - RxKakaoSDKUser
   - RxSwift
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
+    - CircleProgressBar
     - Firebase
     - FirebaseCore
     - FirebaseCoreInternal
@@ -95,13 +122,18 @@ SPEC REPOS:
     - KakaoSDKUser
     - nanopb
     - PromisesObjC
+    - RxAlamofire
     - RxCocoa
+    - RxKakaoSDKAuth
+    - RxKakaoSDKCommon
+    - RxKakaoSDKUser
     - RxRelay
     - RxSwift
     - SnapKit
 
 SPEC CHECKSUMS:
-  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
+  Alamofire: ad60cc5d76abe294f672f51f5aaa4a6ef164ede3
+  CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
   Firebase: bd152f0f3d278c4060c5c71359db08ebcfd5a3e2
   FirebaseCore: b68d3616526ec02e4d155166bbafb8eca64af557
   FirebaseCoreInternal: d2b4acb827908e72eca47a9fd896767c3053921e
@@ -114,11 +146,15 @@ SPEC CHECKSUMS:
   KakaoSDKUser: 2ca18314ce72e6690f76cb1f6f9fbc771d31a803
   nanopb: b552cce312b6c8484180ef47159bc0f65a1f0431
   PromisesObjC: 09985d6d70fbe7878040aa746d78236e6946d2ef
+  RxAlamofire: beb75a1c452d0de225651db4903f5d29d034a620
   RxCocoa: 94f817b71c07517321eb4f9ad299112ca8af743b
+  RxKakaoSDKAuth: c9ac42898307ac3e33e57670b5555b26dc687b3b
+  RxKakaoSDKCommon: c601aecad9efcb41f3971357a73e47c108bc9c95
+  RxKakaoSDKUser: ef3d2df1fd1728278ede2ce45adf92eef4f2dbb6
   RxRelay: 1de1523e604c72b6c68feadedd1af3b1b4d0ecbd
   RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
 
-PODFILE CHECKSUM: 32646e4864dfb63a91de29fd889b91de60f3d851
+PODFILE CHECKSUM: 773b49765389441937946cdfaf82e857c261d54b
 
 COCOAPODS: 1.11.3

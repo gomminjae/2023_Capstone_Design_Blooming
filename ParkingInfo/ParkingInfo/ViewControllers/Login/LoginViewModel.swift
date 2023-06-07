@@ -62,6 +62,8 @@ class LoginViewModel: NSObject {
             } else {
                 if let token = oauthToken?.accessToken {
                     let result = LoginResult.success(token: token)
+                    let dic = try! token.encodeToPostDic()
+                    InfoNetworkImpl.shared.postToServer(params: dic)
                     self.kakaoLoginResult.onNext(result)
                 }
             }
@@ -78,6 +80,12 @@ class LoginViewModel: NSObject {
             } else {
                 if let token = oauthToken?.accessToken {
                     let result = LoginResult.success(token: token)
+                    do {
+                        let dic = try token.encodeToPostDic()
+                        InfoNetworkImpl.shared.postToken(params: dic)
+                    }catch {
+                        print("Error")
+                    }
                     self.kakaoLoginResult.onNext(result)
                 }
             }

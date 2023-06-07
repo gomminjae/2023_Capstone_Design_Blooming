@@ -17,6 +17,7 @@ class LoginViewController: BaseViewController {
     private let disposeBag = DisposeBag()
     private let viewModel = LoginViewModel()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,41 +32,55 @@ class LoginViewController: BaseViewController {
     
     override func setupView() {
         
-        view.addSubview(topBaseView)
-        topBaseView.addSubview(titleLabel)
-        topBaseView.addSubview(subTitleLabel)
-        
+        //view.addSubview(topBaseView)
+        view.addSubview(titleLabel)
+        //topBaseView.addSubview(subTitleLabel)
+        view.addSubview(imageView)
         view.addSubview(kakaoLoginButton)
-        view.addSubview(appleLoginButton)
         view.addSubview(naverLoginButton)
-        
+        view.addSubview(appleLoginButton)
     }
     override func setupLayout() {
-        topBaseView.snp.makeConstraints {
-            $0.top.equalTo(view.safeAreaLayoutGuide)
-            $0.leading.equalTo(view)
-            $0.trailing.equalTo(view)
-            $0.height.equalTo(view.frame.height / 2)
-        }
+//        topBaseView.snp.makeConstraints {
+//            $0.top.equalTo(view.safeAreaLayoutGuide)
+//            $0.leading.equalTo(view)
+//            $0.trailing.equalTo(view)
+//            $0.height.equalTo(view.frame.height / 2)
+//        }
         titleLabel.snp.makeConstraints {
-            $0.centerX.equalTo(topBaseView)
-            $0.top.equalTo(topBaseView).inset(40)
+            $0.centerX.equalTo(view)
+            $0.top.equalTo(view).inset(120)
         }
-        
-        subTitleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(5)
-            $0.centerX.equalTo(titleLabel)
+
+//        subTitleLabel.snp.makeConstraints {
+//            $0.top.equalTo(titleLabel.snp.bottom).offset(20)
+//            $0.centerX.equalTo(titleLabel)
+//        }
+
+        imageView.snp.makeConstraints {
+            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.width.equalTo(400)
+            $0.height.equalTo(400)
+            $0.centerX.equalTo(view)
         }
         
         kakaoLoginButton.snp.makeConstraints {
-            $0.top.equalTo(topBaseView.snp.bottom).offset(40)
-            $0.leading.equalTo(view).inset(40)
-            $0.trailing.equalTo(view).inset(40)
+            $0.top.equalTo(imageView.snp.bottom).offset(40)
+
+            $0.centerX.equalTo(view)
         }
+        naverLoginButton.snp.makeConstraints {
+            $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(10)
+            $0.centerX.equalTo(kakaoLoginButton)
+            $0.height.equalTo(44)
+            $0.width.equalTo(300)
+        }
+
         appleLoginButton.snp.makeConstraints {
-            $0.top.equalTo(kakaoLoginButton.snp.bottom).offset(20)
-            $0.leading.equalTo(kakaoLoginButton)
-            $0.trailing.equalTo(kakaoLoginButton)
+            $0.top.equalTo(naverLoginButton.snp.bottom).offset(10)
+            $0.centerX.equalTo(naverLoginButton)
+            $0.height.equalTo(44)
+            $0.width.equalTo(300)
         }
     }
     override func bindRx() {
@@ -112,9 +127,9 @@ class LoginViewController: BaseViewController {
     //MARK: UI
     let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "당신의 주차를 편하게!"
-        label.textColor = .white
-        label.font = UIFont.systemFont(ofSize: 40, weight: .bold)
+        label.text = "Blooming"
+        label.textColor = .blueTitle
+        label.font = UIFont.systemFont(ofSize: 50, weight: .bold)
         return label
     }()
     
@@ -132,21 +147,35 @@ class LoginViewController: BaseViewController {
         return view
     }()
     
+    let imageView: UIImageView = {
+        let view = UIImageView()
+        view.image = UIImage(named: "parking")
+        return view
+    }()
+    
+    
     let kakaoLoginButton: UIButton = {
         let button = UIButton()
+        //button.setTitle(nil, for: .normal)
         button.setImage(UIImage(named: "kakao_login_medium_wide"), for: .normal)
+        //button.imageView?.contentMode = .scaleToFill
         return button
     }()
     
     var appleLoginButton: ASAuthorizationAppleIDButton = {
         let button = ASAuthorizationAppleIDButton()
         button.addTarget(self, action: #selector(handleAppleLoginTap), for: .touchUpInside)
+        button.backgroundColor = .red
+        button.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         return button
     }()
-    
+
     let naverLoginButton: UIButton = {
         let button = UIButton()
-        button.setTitle("Naver Login", for: .normal)
+        button.backgroundColor = UIColor(red: 0.01, green: 0.78, blue: 0.35, alpha: 1.00)
+        button.setTitle("네이버 로그인", for: .normal)
+        
+        button.imageView?.contentMode = .scaleToFill
         return button
     }()
     

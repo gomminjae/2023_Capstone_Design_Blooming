@@ -28,9 +28,9 @@ class InfoNetworkImpl {
     
     static let shared = InfoNetworkImpl()
     
-    func fetchPosts() -> Observable<[Info]> {
+    func fetchInfos() -> Observable<[Info]> {
         return Observable.create { observer -> Disposable in
-            AF.request("http://15.164.140.81:8080/dummy")
+            AF.request("http://118.67.142.142:8080/dummy")
                 .validate()
                 .responseDecodable(of: [Info].self) { response in
                     switch response.result {
@@ -68,7 +68,7 @@ class InfoNetworkImpl {
         guard let httpBody = try? JSONSerialization.data(withJSONObject: params, options: []) else { return }
         
         // HTTP 요청 설정
-        var request = URLRequest(url: url)
+        var request = URLRequest(url: url) 
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.httpBody = httpBody
@@ -94,32 +94,4 @@ class InfoNetworkImpl {
         
         task.resume()
     }
-}
-
-private extension InfoNetworkImpl {
-    
-    struct InfoAPI {
-        static let scheme = "http"
-        static let host = "15.164.140.81:8080"
-    }
-    
-    func makeGetInfoComponents() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = InfoAPI.scheme
-        components.host = InfoAPI.host
-        components.path = "/dummy"
-        return components
-    }
-    
-    func makepostTokenComponents() -> URLComponents {
-        var components = URLComponents()
-        components.scheme = InfoAPI.scheme
-        components.host = InfoAPI.host
-        components.path = "/login"
-        return components
-    }
-    
-    
-    
-    
 }
