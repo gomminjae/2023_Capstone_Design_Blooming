@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct Info: Codable {
+struct Info: Codable,Equatable {
     
     var parkinglotsTitle: String
     var timeStamp: String
@@ -19,7 +19,7 @@ struct Info: Codable {
         case parkinglotsTitle = "title"
         case total
         case empty
-        case timeStamp
+        case timeStamp = "timestamp"
     }
     
     

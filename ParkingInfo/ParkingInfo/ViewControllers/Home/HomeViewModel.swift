@@ -14,46 +14,39 @@ import KakaoSDKCommon
 import RxKakaoSDKUser
 import RxKakaoSDKCommon
 import RxKakaoSDKAuth
+import RxDataSources
 
-
-
-protocol HomeViewModelBindable {
-    associatedtype Input
-    associatedtype Output
-}
 
 class HomeViewModel {
     private let disposeBag = DisposeBag()
-    var infos: Observable<[Info]> = InfoNetworkImpl.shared.fetchInfos()
+    private let apiCallInterval: RxTimeInterval = .seconds(5)
     
-
-
-//    func getUserProfileInkakao() {
-//
-//        UserApi.shared.rx.me()
-//            .map({ (user) -> User in
-//                var scopes = [String]()
-//
-//                if (user.kakaoAccount?.profileNeedsAgreement == true) { scopes.append("profile") }
-//                if (user.kakaoAccount?.emailNeedsAgreement == true) { scopes.append("account_email") }
-//                if (scopes.count > 0) {
-//                    print("사용자에게 추가 동의를 받아야 합니다.")
-//                    throw SdkError(scopes:scopes)
-//                } else {
-//                    print("사용자의 추가 동의가 필요하지 않습니다.")
-//                    return user
-//                }
-//            })
-//            .retry(when: Auth.shared.rx.incrementalAuthorizationRequired())
-//            .subscribe(onSuccess: { (user) in
-//                print("me(): success.")
-//
-//                _ = user
-//            }, onFailure: { error in
-//                print(error)
-//            })
-//            .disposed(by: disposeBag)
-//    }
-
+    private let infosRelay = BehaviorRelay<[SectionModel<String, Info>]>(value: [])
     
+    var infos: Driver<[SectionModel<String, Info>]> {
+        return infosRelay.asDriver()
+    }
+    
+    init() {
+        fetchInfos()
+        Observable<Int>.interval(apiCallInterval, scheduler: MainScheduler.instance)
+            .startWith(0)
+            .flatMapLatest { _ in InfoNetworkImpl.shared.fetchInfos().asObservable() }
+            .map { [SectionModel(model: "Section", items: $0)] }
+            .bind(to: infosRelay)
+            .disposed(by: disposeBag)
+    }
+    
+    private func fetchInfos() {
+        InfoNetworkImpl.shared.fetchInfos()
+            .map { [SectionModel(model: "Section", items: $0)] }
+            .asDriver(onErrorJustReturn: [])
+            .drive(infosRelay)
+            .disposed(by: disposeBag)
+    }
 }
+
+
+
+
+

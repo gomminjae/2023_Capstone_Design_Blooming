@@ -141,11 +141,6 @@ class LoginViewController: BaseViewController {
         return label
     }()
     
-    let topBaseView: CurvedView = {
-        let view = CurvedView()
-        //view.backgroundColor = .blue
-        return view
-    }()
     
     let imageView: UIImageView = {
         let view = UIImageView()

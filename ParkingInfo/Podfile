@@ -4,7 +4,9 @@ target 'ParkingInfo' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
 
-  # Pods for ParkingInfo
+  # Pods for ParkingInfoa
+  pod 'RxDataSources'
+  pod 'Alamofire'
   pod 'SnapKit'
   pod 'RxSwift'
   pod 'RxCocoa'

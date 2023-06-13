@@ -8,9 +8,12 @@
 import UIKit
 import SnapKit
 import CircleProgressBar
+import RxSwift
 
 
 class HomeCell: UICollectionViewCell {
+    
+    private var disposeBag = DisposeBag()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -62,23 +65,26 @@ class HomeCell: UICollectionViewCell {
         titleLabel.text = model.parkinglotsTitle
         parkingSeatLabel.text = "남은 자리: \(model.empty)"
         timeStampLabel.text = model.timeStamp
-        let progress = Double(model.empty) / Double(model.total)
-        circleProgressBar.setProgress(progress, animated: true)
-        print(progress)
+        let progress = Double(model.total-model.empty) / Double(model.total)
+        let progressObservable = Observable.just(progress)
         
-        circleProgressBar.progressBarProgressColor = .redTitle
-        circleProgressBar.progressBarTrackColor = .redBackground
-        
-        if progress <= 0.5 {
-            circleProgressBar.progressBarProgressColor = .blueTitle
-            circleProgressBar.progressBarTrackColor = .blueBackground
-        } else if progress < 1 {
-            circleProgressBar.progressBarProgressColor = .greenTitle
-            circleProgressBar.progressBarTrackColor = .greenBackground
-        } else {
-            circleProgressBar.progressBarProgressColor = .redTitle
-            circleProgressBar.progressBarTrackColor = .redBackground
-        }
+        progressObservable
+            .distinctUntilChanged()
+            .subscribe(onNext: { [weak self] progress in
+                self?.circleProgressBar.setProgress(progress, animated: true)
+                
+                if progress < 0.5 {
+                    self?.circleProgressBar.progressBarProgressColor = .blueTitle
+                    self?.circleProgressBar.progressBarTrackColor = .blueBackground
+                } else if progress < 0.8 {
+                    self?.circleProgressBar.progressBarProgressColor = .greenTitle
+                    self?.circleProgressBar.progressBarTrackColor = .greenBackground
+                } else {
+                    self?.circleProgressBar.progressBarProgressColor = .redTitle
+                    self?.circleProgressBar.progressBarTrackColor = .redBackground
+                }
+            })
+            .disposed(by: disposeBag)
     }
     
     //MARK: UI

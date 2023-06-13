@@ -30,7 +30,7 @@ class InfoNetworkImpl {
     
     func fetchInfos() -> Observable<[Info]> {
         return Observable.create { observer -> Disposable in
-            AF.request("http://118.67.142.142:8080/dummy")
+            AF.request("http://118.67.142.142:5000/parkingLotInfo")
                 .validate()
                 .responseDecodable(of: [Info].self) { response in
                     switch response.result {

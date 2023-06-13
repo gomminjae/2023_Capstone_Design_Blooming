@@ -20,11 +20,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="xv0-V7-zCS">
-                        <barButtonItem key="rightBarButtonItem" image="person.fill" catalog="system" id="EOB-60-0UE">
-                            <color key="tintColor" systemColor="systemBackgroundColor"/>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="xv0-V7-zCS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -96,7 +92,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7EO-lO-Y6m">
-                                        <rect key="frame" x="119.33333333333333" y="113" width="43.333333333333329" height="21"/>
+                                        <rect key="frame" x="119.33333333333334" y="113" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -108,9 +104,9 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="911-Xs-Uqr">
-                                        <rect key="frame" x="119.33333333333333" y="166" width="43.333333333333329" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="119.33333333333334" y="166" width="46" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="17"/>
+                                        <color key="textColor" name="AccentColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2yw-h0-AfA">
@@ -122,7 +118,7 @@
                                         </buttonConfiguration>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQM-wA-c8w">
-                                        <rect key="frame" x="119.33333333333333" y="67" width="43.333333333333329" height="21"/>
+                                        <rect key="frame" x="119.33333333333334" y="67" width="46" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -208,7 +204,6 @@
                     <connections>
                         <segue destination="Nzr-FN-zh0" kind="relationship" relationship="viewControllers" id="QtW-Xi-KB5"/>
                         <segue destination="4UT-GK-lkg" kind="relationship" relationship="viewControllers" id="eda-FG-DBh"/>
-                        <segue destination="qKQ-Iz-z1i" kind="relationship" relationship="viewControllers" id="WOG-zG-sRK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1L2-Er-FJc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -234,27 +229,10 @@
             </objects>
             <point key="canvasLocation" x="1006.8702290076335" y="722.53521126760563"/>
         </scene>
-        <!--Item-->
-        <scene sceneID="8ow-pm-bwb">
-            <objects>
-                <viewController id="qKQ-Iz-z1i" customClass="PredictionViewController" customModule="ParkingInfo" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="6rH-l3-Wa9">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="plV-Cs-4e0"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="yBW-gG-j4Q"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9aU-XV-K6Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="886" y="1546"/>
-        </scene>
     </scenes>
     <resources>
         <image name="house.fill" catalog="system" width="128" height="104"/>
         <image name="map.fill" catalog="system" width="128" height="110"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

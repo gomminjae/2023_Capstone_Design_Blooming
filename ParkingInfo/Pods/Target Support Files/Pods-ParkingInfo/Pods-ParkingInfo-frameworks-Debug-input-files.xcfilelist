@@ -1,6 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-ParkingInfo/Pods-ParkingInfo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CircleProgressBar/CircleProgressBar.framework
+${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCore/FirebaseCore.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseCoreInternal/FirebaseCoreInternal.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseInstallations/FirebaseInstallations.framework
@@ -13,6 +14,7 @@ ${BUILT_PRODUCTS_DIR}/KakaoSDKUser/KakaoSDKUser.framework
 ${BUILT_PRODUCTS_DIR}/PromisesObjC/FBLPromises.framework
 ${BUILT_PRODUCTS_DIR}/RxAlamofire/RxAlamofire.framework
 ${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework
+${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework
 ${BUILT_PRODUCTS_DIR}/RxKakaoSDKAuth/RxKakaoSDKAuth.framework
 ${BUILT_PRODUCTS_DIR}/RxKakaoSDKCommon/RxKakaoSDKCommon.framework
 ${BUILT_PRODUCTS_DIR}/RxKakaoSDKUser/RxKakaoSDKUser.framework
