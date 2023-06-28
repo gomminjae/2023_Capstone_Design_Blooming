@@ -44,7 +44,7 @@ class DetailViewController: UIViewController {
             parkinglotsTitle.text = "\(info.parkinglotsTitle) 주차 현황"
             timestampLabel.text = info.timeStamp
             emptyLabel.text = "\(info.empty)자리 남았습니다."
-            totalLabel.text = "총 \(info.total)"
+            totalLabel.text = "총 \(info.total)자리"
         }
         
     }
