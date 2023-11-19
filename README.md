@@ -16,3 +16,7 @@
 | Backend, Data management  | [Seunghyun Kim](https://github.com/kim-seonghyun)    |
 
 # Tech Stack 
+ML- YoloV5, Colab Pro, 
+iOS-RxSwift,Swift5 
+backend- Flask, mySQL,Python 
+Hardware -raspberryPI 3B+, HQ Camera 
