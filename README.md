@@ -9,11 +9,6 @@
 
 # Roles
 
-| Role                  | Name      |
-|---------------------|----------|
-| Team Leader, iOS, BigData Engineering, Model training | [Minjae Gwon](https://github.com/gomminjae)      |
-| ML dev, Laspberry PI    | [Daeyoul Yang](https://github.com/DaeYoul-Yang)      |
-| Backend, Data management  | [Seunghyun Kim](https://github.com/kim-seonghyun)    |
 
 # Tech Stack 
 - ML- YoloV5, Colab Pro
